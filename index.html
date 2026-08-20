@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YADORI 预览</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,"Hiragino Sans",sans-serif;background:#fbf9f5;color:#2a2826;}
+img{display:block;}
+.serif{font-family:Georgia,"Cormorant Garamond",serif;}
+.badge{display:inline-flex;border:1px solid #ebe6e0;background:#f5efe0;border-radius:999px;padding:6px 14px;font-size:11px;font-weight:600;color:#635f5b;}
+.btn{display:inline-block;border:none;border-radius:999px;padding:14px 28px;font-size:13px;font-weight:700;}
+.ph{background:#d4e0d1;display:flex;align-items:center;justify-content:center;color:#7e9075;font-size:12px;overflow:hidden;position:relative;}
+.ph img{width:100%;height:100%;object-fit:cover;}
+section{position:relative;overflow:hidden;padding:48px 24px;}
+.hero{position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:24px;color:#efece8;}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.hero-overlay{position:absolute;inset:0;background:rgba(30,34,31,0.6);z-index:0;}
+.hero>*:not(video):not(.hero-overlay){position:relative;z-index:1;}
+.hero nav{display:flex;justify-content:space-between;align-items:center;}
+.hero .logo{font-size:22px;}
+.hero .links{display:none;gap:32px;font-size:14px;}
+.hero .pill{border:1px solid #efece8;border-radius:999px;padding:6px 12px;font-size:10px;font-weight:600;}
+.hero .core{text-align:center;display:flex;flex-direction:column;gap:20px;align-items:center;}
+.hero .headline{font-weight:600;font-size:28px;line-height:1.5;}
+.hero .sub{font-size:13px;opacity:.8;line-height:1.6;}
+.hero .bottom{display:flex;flex-direction:column;align-items:center;gap:16px;}
+.hero .btn{background:#7e9075;color:#efece8;width:100%;text-align:center;}
+.hero .scroll{font-size:11px;opacity:.5;}
+.blob{position:absolute;pointer-events:none;}
+.center-badge{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;position:relative;}
+.brand-intro p.h{font-weight:600;font-size:22px;line-height:1.5;position:relative;}
+.brand-intro p.b{font-size:14px;line-height:1.8;color:#635f5b;margin-top:24px;position:relative;white-space:pre-line;}
+.brand-intro .b1{left:-120px;top:40px;height:280px;width:320px;border-radius:140px;background:#d4e0d1;opacity:.35;}
+.brand-intro .b2{display:none;}
+.pc{display:flex;flex-direction:column;gap:24px;padding-top:40px;}
+.pc .media{order:1;position:relative;display:flex;justify-content:center;align-items:center;min-height:342px;}
+.pc .content{order:2;position:relative;}
+.pc .media .ph{width:310px;height:310px;border-radius:155px;margin:0 auto;position:relative;z-index:1;}
+.pc .media .b1{left:calc(50% - 30px);top:20px;width:260px;height:260px;border-radius:130px;background:#d4e0d1;opacity:.3;transform:translateX(-50%);}
+.pc .content .h{font-size:24px;font-weight:600;margin:0 0 12px;}
+.pc .content .b{font-size:14px;line-height:1.7;color:#635f5b;white-space:pre-line;}
+.pc .content .tag{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:14px;color:#7e9075;}
+.pc .content .tag .line{width:32px;height:1px;background:#7e9075;}
+.hiw .steps{display:flex;flex-direction:column;gap:32px;margin-top:32px;position:relative;}
+.hiw .ph{height:210px;border-radius:16px;}
+.hiw .num{color:#7e9075;font-weight:700;font-size:16px;}
+.hiw .t{font-size:16px;font-weight:600;margin-top:8px;}
+.hiw .b{font-size:13px;line-height:1.5;color:#635f5b;margin-top:6px;}
+.hiw .b1{left:180px;top:400px;width:280px;height:280px;border-radius:140px;background:#d4e0d1;opacity:.25;}
+.hiw .b2{display:none;}
+.emo{background:#efe2df;text-align:center;padding:64px 24px;}
+.emo .h{font-size:22px;font-weight:600;}
+.emo .b{font-size:14px;line-height:1.7;color:#635f5b;margin-top:20px;white-space:pre-line;}
+.dl .center-badge{position:relative;}
+.dl .moments{display:flex;flex-direction:column;gap:40px;margin-top:32px;position:relative;}
+.dl .ph{height:220px;border-radius:16px;}
+.dl .t{font-size:16px;font-weight:700;margin-top:12px;}
+.dl .b{font-size:13px;line-height:1.6;color:#635f5b;margin-top:6px;}
+.dl .b1{left:180px;top:320px;width:260px;height:260px;border-radius:130px;background:#efe2df;opacity:.35;}
+.dl .b2{display:none;}
+.pers{background:#d4e0d1;display:flex;flex-direction:column;gap:24px;}
+.pers .ph{height:240px;border-radius:20px;position:relative;z-index:1;}
+.pers .content{position:relative;}
+.pers .h{font-size:24px;font-weight:700;margin:12px 0;}
+.pers .b{font-size:14px;line-height:1.7;color:#635f5b;white-space:pre-line;}
+.pers .b1{left:-140px;top:100px;width:300px;height:300px;border-radius:150px;background:#f5efe0;opacity:.4;}
+.pers .b2{display:none;}
+.cs .center-badge{position:relative;}
+.cs .cards{display:flex;flex-direction:column;gap:24px;margin-top:32px;position:relative;}
+.cs .card{border:1px solid #ebe6e0;border-radius:16px;padding:16px;background:#fbf9f5;}
+.cs .ph{height:180px;border-radius:12px;}
+.cs .card .name{font-size:16px;font-weight:700;margin-top:10px;}
+.cs .card .b{font-size:12px;line-height:1.5;color:#635f5b;margin-top:4px;}
+.cs .b1{left:-100px;top:200px;width:280px;height:280px;border-radius:140px;background:#efe2df;opacity:.35;}
+.cs .b2{display:none;}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;margin-right:6px;vertical-align:middle;}
+.sc{display:flex;flex-direction:column;gap:24px;padding-top:40px;}
+.sc .ph{height:310px;border-radius:20px;position:relative;z-index:1;}
+.sc .content{position:relative;}
+.sc .name{font-size:22px;font-weight:600;margin-top:8px;}
+.sc .price{color:#7e9075;font-size:20px;margin-top:6px;}
+.sc .b{font-size:13px;line-height:1.6;color:#635f5b;margin-top:12px;}
+.sc .btn{background:#2a2826;color:#fbf9f5;width:100%;text-align:center;margin-top:16px;}
+.sc .b1{left:160px;top:180px;width:260px;height:260px;border-radius:130px;background:#d4e0d1;opacity:.35;}
+.sc .b2{display:none;}
+.cta{background:#1e221f;color:#efece8;text-align:center;padding:80px 24px;}
+.cta .h{font-size:22px;font-weight:600;position:relative;}
+.cta .b{font-size:13px;opacity:.6;margin-top:16px;position:relative;}
+.cta .b1{left:-100px;top:-100px;width:280px;height:280px;border-radius:140px;background:#2d3d2e;opacity:.4;}
+.cta .b2{display:none;}
+footer{background:#fbf9f5;border-top:1px solid #ebe6e0;padding:64px 24px 32px;}
+footer .top{display:flex;flex-direction:column;gap:32px;}
+footer .logo{font-size:22px;text-align:center;}
+footer .desc{font-size:13px;line-height:1.6;color:#635f5b;margin-top:12px;text-align:center;white-space:pre-line;}
+footer .cols{display:flex;justify-content:space-between;font-size:13px;}
+footer .col .head{font-size:13px;font-weight:700;margin-bottom:10px;}
+footer .col p{font-size:13px;color:#635f5b;margin-top:10px;}
+footer .bottom{margin-top:48px;padding-top:0;font-size:12px;color:#635f5b;}
+footer .bottom .sns{display:flex;gap:24px;}
+footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
+@media(min-width:1024px){
+.hero{padding:40px 80px;}
+.hero .links{display:flex;}
+.hero .pill.mobile-only{display:none;}
+.hero .headline{font-size:52px;}
+.hero .sub{font-size:16px;}
+.hero .btn{width:auto;padding:16px 40px;}
+section{padding:100px 80px;}
+.brand-intro p.h{font-size:34px;max-width:760px;margin-left:auto;margin-right:auto;}
+.brand-intro p.b{font-size:16px;max-width:720px;margin-left:auto;margin-right:auto;}
+.pc{flex-direction:row;align-items:center;gap:60px;}
+.pc .media{order:2;flex:1;} .pc .content{order:1;flex:1;}
+.pc .media .ph{width:440px;height:440px;border-radius:220px;}
+.pc .content .h{font-size:38px;}
+.pc .content .b{font-size:16px;}
+.hiw .steps{flex-direction:row;flex-wrap:wrap;gap:32px;}
+.hiw .step{flex:1 1 21%;min-width:200px;}
+.hiw .ph{aspect-ratio:4/3;height:auto;}
+.dl .moments{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+.dl .ph{height:280px;}
+.pers{flex-direction:row;align-items:center;gap:60px;}
+.pers .ph{width:480px;height:380px;flex-shrink:0;}
+.pers .h{font-size:34px;}
+.cs .cards{flex-direction:row;flex-wrap:wrap;gap:24px;}
+.cs .card{flex:1 1 21%;min-width:220px;}
+.cs .ph{height:220px;}
+.sc{flex-direction:row;align-items:center;gap:60px;}
+.sc .ph{width:480px;height:420px;flex-shrink:0;}
+.sc .content{flex:1;}
+.sc .btn{width:auto;padding:16px 48px;}
+footer .logo{text-align:left;}
+footer .desc{text-align:left;}
+footer .top{flex-direction:row;justify-content:space-between;}
+footer .brand{width:300px;}
+footer .cols{gap:64px;}
+footer .bottom{display:flex;flex-direction:row-reverse;justify-content:space-between;align-items:center;}
+footer .bottom .copy{margin-top:0;}
+.brand-intro .b1{left:-257px;top:-105px;height:570px;width:820px;border-radius:285px;opacity:.45;}
+.brand-intro .b2{display:block;left:924px;top:0;height:580px;width:680px;border-radius:290px;background:#f5efe0;opacity:.5;}
+.pc .media{min-height:560px;}
+.pc .media .ph{width:480px;height:480px;border-radius:240px;}
+.pc .media .b1{left:0;top:-20px;width:580px;height:580px;border-radius:290px;opacity:.35;transform:none;}
+.hiw .b1{left:-200px;top:95px;width:860px;height:740px;border-radius:370px;background:#f5efe0;opacity:.45;}
+.hiw .b2{display:block;left:932px;top:3px;width:676px;height:579px;border-radius:290px;background:#d4e0d1;opacity:.35;}
+.dl .b1{left:-231px;top:101px;width:780px;height:680px;border-radius:340px;background:#d4e0d1;opacity:.4;}
+.dl .b2{display:block;left:940px;top:280px;width:680px;height:580px;border-radius:290px;background:#efe2df;opacity:.35;}
+.pers .b1{left:-390px;top:-230px;width:820px;height:700px;border-radius:350px;opacity:.5;}
+.pers .b2{display:block;left:813px;top:227px;width:700px;height:580px;border-radius:290px;background:#efe2df;opacity:.45;}
+.cs .b1{left:-220px;top:-120px;width:860px;height:740px;border-radius:370px;background:#f5efe0;opacity:.55;}
+.cs .b2{display:block;left:898px;top:290px;width:740px;height:640px;border-radius:320px;background:#efe2df;opacity:.45;}
+.sc .b1{left:-200px;top:-80px;width:760px;height:640px;border-radius:320px;opacity:.4;}
+.sc .b2{display:block;left:837px;top:283px;width:680px;height:580px;border-radius:290px;background:#efe2df;opacity:.42;}
+.cta .b1{left:-190px;top:-198px;width:800px;height:680px;border-radius:340px;opacity:.5;}
+.cta .b2{display:block;left:1028px;top:160px;width:640px;height:540px;border-radius:270px;background:#2d3d2e;opacity:.4;}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <video autoplay muted loop playsinline poster="hero-poster.jpg" src="hero.mp4"></video>
+  <div class="hero-overlay"></div>
+  <nav>
+    <span class="pill mobile-only">≡</span>
+    <span class="logo serif">YADORI</span>
+    <span class="pill">ストア</span>
+    <div class="links"><span>Concept</span><span>Touch</span><span>Colors</span><span class="pill">オンラインストア</span></div>
+  </nav>
+  <div class="core">
+    <p class="headline">触れたら、<br>そっと返してくれる。</p>
+    <p class="sub">触れると、くるん。<br>小さな動きで、そっと応えるハリネズミ。</p>
+  </div>
+  <div class="bottom">
+    <button class="btn">YADORIに触れてみる</button>
+    <span class="scroll serif">SCROLL DOWN</span>
+  </div>
+</section>
+
+<section class="brand-intro">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="center-badge">
+    <span class="badge">INTRO</span>
+    <p class="h">言えない日も、ある。</p>
+    <p class="b">うれしかったこと。ちょっと疲れたこと。なんでもないけど、誰かにそばにいてほしい日。
+
+そんなとき、言葉にしなくてもいい。ただ触れて、少しだけひと休み。
+
+YADORIは、そんな時間のそばにいます。</p>
+  </div>
+</section>
+
+<section class="hiw">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="center-badge">
+    <span class="badge">TOUCH &amp; RESPONSE</span>
+    <p style="font-weight:600;font-size:24px;">触れると、どうなるの？</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/67c0d868-f270-4b93-97ff-0862177bd946.png" alt=""></div><p class="num serif">01</p><p class="t">そっと触れると…</p><p class="b">少しだけ、身体を動かします。</p></div>
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/b57eec00-fa01-4d06-ac8d-e2dbe3f4ce5d.png" alt=""></div><p class="num serif">02</p><p class="t">もう一度触れると…</p><p class="b">きゅっと、まんまるに。</p></div>
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/5133ccc3-c8cb-4b7b-8eb4-dac279cb857f.png" alt=""></div><p class="num serif">03</p><p class="t">しばらくすると…</p><p class="b">ゆっくりと開き始めます。</p></div>
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/5133ccc3-c8cb-4b7b-8eb4-dac279cb857f.png" alt=""></div><p class="num serif">04</p><p class="t">そして、また。</p><p class="b">もとの姿に、ゆっくり戻ります。</p></div>
+  </div>
+</section>
+
+<section class="pc">
+  <div class="media"><div class="blob b1"></div><div class="ph"><img src="https://www.figma.com/api/mcp/asset/5ed38150-37ce-4496-b254-56c73b098a11.png" alt=""></div></div>
+  <div class="content">
+    <span class="badge">YADORI CONCEPT</span>
+    <p class="h">そばにいる、ということ。</p>
+    <p class="b">YADORIがつくるのは、ただ触れるためのものではありません。
+
+うれしい日も、疲れた日も、なんでもない日も。いつもの場所に、いつものように。気づけば、そばにいる。
+
+そんな小さな居場所を、YADORIはつくりたいと思っています。</p>
+    <div class="tag"><span class="line"></span><span class="serif">The Art of Quiet Response</span></div>
+  </div>
+</section>
+
+<section class="emo">
+  <p class="h">ただ触れると、<br>少しだけ返してくれる。</p>
+  <p class="b">たくさん話しかけてくるわけでも、何かを教えてくれるわけでもありません。
+
+ただ、そっと触れると、ほんの少し、返してくれる。
+
+それだけのやりとりが、なんだかちょうどいい。</p>
+</section>
+
+<section class="dl">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="center-badge">
+    <span class="badge">DAILY LIFE</span>
+    <p style="font-weight:600;font-size:24px;">いつもの時間の、そばに。</p>
+  </div>
+  <div class="moments">
+    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/75891f7f-8591-47a8-8c92-629b7291e332.png" alt=""></div><p class="t">おやすみ前の、はりん。</p><p class="b">一日の終わりに、ちょっとだけなでる。今日もおつかれさま。あとは、ゆっくり眠るだけ。</p></div>
+    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/a6fc4c3c-6bb6-4ea7-b2e3-2a4d99ad81ae.png" alt=""></div><p class="t">ひと休みの、はりん。</p><p class="b">ちょっと考えすぎたときは、手をのばす。なでたり、にぎったり。それから、また仕事に戻る。</p></div>
+    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/1d057432-f857-415a-a30c-11599d59a27b.png" alt=""></div><p class="t">旅のおともに、はりん。</p><p class="b">バッグのすき間に、ちょこんと。いつもの子と、いっしょに出かけよう。</p></div>
+    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/81e28abb-09b5-42a7-805a-627479bc08c3.png" alt=""></div><p class="t">いつものそばに、はりん。</p><p class="b">何をするでもなく、ただいっしょ。そんな時間も、けっこう好き。</p></div>
+  </div>
+</section>
+
+<section class="pers">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="ph"><img src="https://www.figma.com/api/mcp/asset/fdf69df9-73fb-429a-8e44-40ff08fd05e0.png" alt=""></div>
+  <div class="content">
+    <span class="badge">CHARACTER</span>
+    <p class="h">ちょっと、臆病です。</p>
+    <p class="b">YADORIは、ちょっぴり臆病で、まわりの気配にとても敏感。
+
+びっくりすると、しばらくじっとしてしまうこともあります。
+
+でも、少しすると、またいつもの姿に。そんなところも、この子らしさです。</p>
+  </div>
+</section>
+
+<section class="cs">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="center-badge">
+    <span class="badge">COLOR MATTERS</span>
+    <p style="font-weight:600;font-size:22px;">今日のあなたは、<br>どのはりん？</p>
+    <p style="font-size:13px;color:#635f5b;">今日の気分に似た子を、選んで。</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/6c4eb5f3-cb30-4354-952e-0969ff299016.png" alt=""></div><p><img class="dot" style="border-radius:0;width:12px;height:12px;" src="https://www.figma.com/api/mcp/asset/2da61dee-8bf8-4c31-ba37-9e396f1504d3.svg" alt=""></p><p class="name">むく</p><p class="b">静かなところが好き。しゃべらなくても、いっしょにいればそれでいい。</p></div>
+    <div class="card"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/bcc7e28f-9f55-45dc-9ded-8d7cc87abb0f.png" alt=""></div><p><img class="dot" style="border-radius:0;width:12px;height:12px;" src="https://www.figma.com/api/mcp/asset/60912688-d6ff-4359-9dc2-4f5fc194b65d.svg" alt=""></p><p class="name">こむぎ</p><p class="b">いつもだいたい、ごきげん。何もない日も、いっしょにいるとちょっと安心。</p></div>
+    <div class="card"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/d7a6b93e-4c4b-4f42-89b2-7590441abf17.png" alt=""></div><p><img class="dot" style="border-radius:0;width:12px;height:12px;" src="https://www.figma.com/api/mcp/asset/9bfba5b5-31a8-41d5-a142-819ffab6c293.svg" alt=""></p><p class="name">ぽぽ</p><p class="b">気になるものが、ちょっと多め。あっちも、こっちも、ちょっと気になる。</p></div>
+    <div class="card"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/a9998fb3-fc77-4241-ae7d-8e36db39d5bd.png" alt=""></div><p><img class="dot" style="border-radius:0;width:12px;height:12px;" src="https://www.figma.com/api/mcp/asset/4cb9893a-5d6c-4071-bd17-01394c4784c6.svg" alt=""></p><p class="name">ねむ</p><p class="b">急がない。がんばりすぎない。眠くなったら、すぐひと休み。</p></div>
+  </div>
+</section>
+
+<section class="sc">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="ph"><img src="https://www.figma.com/api/mcp/asset/a782313e-009e-4788-8a31-98a56df957c6.png" alt=""></div>
+  <div class="content">
+    <span class="badge">YADORI SPECIAL SET</span>
+    <p class="name">YADORI ポータブルセット</p>
+    <p class="price">¥18,700 <span style="font-size:13px;color:#635f5b;">(税込)</span></p>
+    <p class="b">【内容物】YADORI本体（ご希望のカラー1点）、専用オーガニックリネン巾着、Hinoki専用充電ベース、USB給電ケーブル、取扱説明書（詩集のような装丁のブックレット）。</p>
+    <button class="btn">ご希望のカラーを選んで購入する</button>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <p class="h">あなたが触れたくなったとき、<br>そっと、となりに。</p>
+  <p class="b">忙しない毎日に、小さな余白と温もりを。</p>
+</section>
+
+<footer>
+  <div class="top">
+    <div class="brand">
+      <p class="logo serif">YADORI</p>
+      <p class="desc">言葉にできない気持ちを、そっと手のひらで分け合う。
+
+触れると、小さく応えてくれる。
+
+YADORIは、そんな小さな居場所です。</p>
+    </div>
+    <div class="cols">
+      <div class="col"><p class="head">ABOUT</p><p>Concept</p><p>How it Works</p></div>
+      <div class="col"><p class="head">PRODUCT</p><p>YADORI</p><p>Colors</p></div>
+      <div class="col"><p class="head">SUPPORT</p><p>FAQ</p><p>Contact</p></div>
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="sns"><span>Instagram</span><span>Notes</span></div>
+    <p class="copy">© 2026 YADORI Inc. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
