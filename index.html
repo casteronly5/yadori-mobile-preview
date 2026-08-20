@@ -43,11 +43,16 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .pc .content .b{font-size:14px;line-height:1.7;color:#635f5b;white-space:pre-line;}
 .pc .content .tag{display:flex;align-items:center;gap:12px;margin-top:16px;font-size:14px;color:#7e9075;}
 .pc .content .tag .line{width:32px;height:1px;background:#7e9075;}
-.hiw .steps{display:flex;flex-direction:column;gap:32px;margin-top:32px;position:relative;}
+.hiw .steps{position:relative;margin-top:32px;max-width:420px;margin-left:auto;margin-right:auto;cursor:pointer;user-select:none;}
+.hiw .step{display:none;opacity:0;transition:opacity .35s ease;}
+.hiw .step.is-active{display:block;}
+.hiw .step.is-visible{opacity:1;}
 .hiw .ph{height:210px;border-radius:16px;}
 .hiw .num{color:#7e9075;font-weight:700;font-size:16px;}
 .hiw .t{font-size:16px;font-weight:600;margin-top:8px;}
 .hiw .b{font-size:13px;line-height:1.5;color:#635f5b;margin-top:6px;}
+.hiw .tap-hint{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:20px;font-size:11px;color:#7e9075;opacity:.7;}
+.hiw .tap-hint .ring{width:6px;height:6px;border-radius:50%;background:#7e9075;}
 .hiw .b1{left:180px;top:400px;width:280px;height:280px;border-radius:140px;background:#d4e0d1;opacity:.25;}
 .hiw .b2{display:none;}
 .emo{background:#efe2df;text-align:center;padding:64px 24px;}
@@ -115,8 +120,7 @@ section{padding:100px 80px;}
 .pc .media .ph{width:440px;height:440px;border-radius:220px;}
 .pc .content .h{font-size:38px;}
 .pc .content .b{font-size:16px;}
-.hiw .steps{flex-direction:row;flex-wrap:wrap;gap:32px;}
-.hiw .step{flex:1 1 21%;min-width:200px;}
+.hiw .steps{max-width:480px;}
 .hiw .ph{aspect-ratio:4/3;height:auto;}
 .dl .moments{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
 .dl .ph{height:280px;}
@@ -199,12 +203,13 @@ YADORIは、そんな時間のそばにいます。</p>
     <span class="badge">TOUCH &amp; RESPONSE</span>
     <p style="font-weight:600;font-size:24px;">触れると、どうなるの？</p>
   </div>
-  <div class="steps">
-    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/67c0d868-f270-4b93-97ff-0862177bd946.png" alt=""></div><p class="num serif">01</p><p class="t">そっと触れると…</p><p class="b">少しだけ、身体を動かします。</p></div>
+  <div class="steps" id="hiwSteps">
+    <div class="step is-active is-visible"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/67c0d868-f270-4b93-97ff-0862177bd946.png" alt=""></div><p class="num serif">01</p><p class="t">そっと触れると…</p><p class="b">少しだけ、身体を動かします。</p></div>
     <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/b57eec00-fa01-4d06-ac8d-e2dbe3f4ce5d.png" alt=""></div><p class="num serif">02</p><p class="t">もう一度触れると…</p><p class="b">きゅっと、まんまるに。</p></div>
     <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/5133ccc3-c8cb-4b7b-8eb4-dac279cb857f.png" alt=""></div><p class="num serif">03</p><p class="t">しばらくすると…</p><p class="b">ゆっくりと開き始めます。</p></div>
     <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/5133ccc3-c8cb-4b7b-8eb4-dac279cb857f.png" alt=""></div><p class="num serif">04</p><p class="t">そして、また。</p><p class="b">もとの姿に、ゆっくり戻ります。</p></div>
   </div>
+  <p class="tap-hint"><span class="ring"></span>タップして次へ</p>
 </section>
 
 <section class="pc">
@@ -318,5 +323,34 @@ YADORIは、そんな小さな居場所です。</p>
   </div>
 </footer>
 
+<script>
+(function(){
+  var container = document.getElementById('hiwSteps');
+  if (!container) return;
+  var steps = Array.prototype.slice.call(container.querySelectorAll('.step'));
+  var current = 0;
+  var busy = false;
+
+  function goTo(nextIndex){
+    if (busy || steps.length < 2) return;
+    busy = true;
+    var currentEl = steps[current];
+    var nextEl = steps[nextIndex];
+    currentEl.classList.remove('is-visible');
+    setTimeout(function(){
+      currentEl.classList.remove('is-active');
+      nextEl.classList.add('is-active');
+      void nextEl.offsetWidth;
+      nextEl.classList.add('is-visible');
+      current = nextIndex;
+      busy = false;
+    }, 350);
+  }
+
+  container.addEventListener('click', function(){
+    goTo((current + 1) % steps.length);
+  });
+})();
+</script>
 </body>
 </html>
