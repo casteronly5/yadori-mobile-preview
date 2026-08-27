@@ -52,18 +52,13 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .hiw .organic img{width:100%;height:100%;display:block;}
 .hiw .organic.o1{left:0px;top:103.01px;width:406.94px;height:339.69px;}
 .hiw .organic.o2{left:195.34px;top:47px;width:439.14px;height:385.81px;}
-.hiw .center-badge,.hiw .steps,.hiw .tap-hint{position:relative;z-index:1;}
-.hiw .steps{position:relative;max-width:420px;margin-left:auto;margin-right:auto;cursor:pointer;user-select:none;}
-.hiw .step{display:none;opacity:0;transition:opacity .8s ease-in-out;}
-.hiw .step.is-active{display:block;}
-.hiw .step.is-visible{opacity:1;}
+.hiw .center-badge,.hiw .steps{position:relative;z-index:1;}
+.hiw .steps{display:flex;flex-direction:column;gap:48px;}
+.hiw .step{display:flex;flex-direction:column;gap:16px;}
 .hiw .step .ph{height:210px;border-radius:16px;background:transparent;}
 .hiw .step .ph img{object-fit:contain;}
-.hiw .num{color:#7e9075;font-weight:700;font-size:16px;}
-.hiw .t{font-size:16px;font-weight:600;margin-top:8px;font-family:'Noto Sans JP',sans-serif;}
-.hiw .b{font-size:16px;line-height:1.5;color:#635f5b;margin-top:8px;font-family:'Noto Sans JP',sans-serif;}
-.hiw .tap-hint{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:20px;font-size:11px;color:#7e9075;opacity:.7;}
-.hiw .tap-hint .ring{width:6px;height:6px;border-radius:50%;background:#7e9075;}
+.hiw .t{font-size:16px;font-weight:600;text-align:center;font-family:'Noto Sans JP',sans-serif;}
+.hiw .b{font-size:16px;line-height:1.5;color:#635f5b;text-align:center;font-family:'Noto Sans JP',sans-serif;}
 .emo{background:#efe2df;text-align:center;padding:64px 24px;}
 .emo{position:relative;overflow:hidden;}
 .emo .group2-wrap{position:absolute;inset:-93.29% -106.24% -49.19% -39.16%;container-type:size;pointer-events:none;z-index:0;}
@@ -220,12 +215,11 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   <div class="center-badge">
     <p class="sec-h">お腹にふれると、くるん。</p>
   </div>
-  <div class="steps" id="hiwSteps">
-    <div class="step is-active is-visible"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/916b6769-dd62-4146-a712-f609cffa7f94.png" alt=""></div><p class="num serif">01</p><p class="t">そっとふれると…</p><p class="b">そっと返してくれる。</p></div>
-    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/f4362ace-1bca-425b-9c21-cb7b43f7f7bc.png" alt=""></div><p class="num serif">02</p><p class="t">もう一度触れると…</p><p class="b">きゅっと、まんまるに。</p></div>
-    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/e5729953-741d-4d27-ae43-d7a513635abe.png" alt=""></div><p class="num serif">03</p><p class="t">しばらくすると…</p><p class="b">ゆっくりと開き始めます。</p></div>
+  <div class="steps">
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/c7163ef0-abd3-4da8-bbd3-2bbc36d54d76.png" alt=""></div><p class="t">そっとふれると…</p><p class="b">そっと返してくれる。</p></div>
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/84c8f6a1-5554-4679-9c84-4433c94cdde3.png" alt=""></div></div>
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/c333f6f6-f0ac-4f74-afe5-34a8f75f711c.png" alt=""></div></div>
   </div>
-  <p class="tap-hint"><span class="ring"></span>タップして次へ</p>
 </section>
 
 <section class="pc">
@@ -259,9 +253,9 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
     <p class="sec-h">いつもの時間の、そばに。</p>
   </div>
   <div class="moments">
-    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/166e7cc9-c537-459e-a3d1-9946850eac21.png" alt=""></div><p class="t">少し疲れた日の、帰宅後に。</p><p class="b">言葉にしなくても、そばにいてくれる。</p></div>
-    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/e96338cf-09b8-43f5-b88e-072850569633.png" alt=""></div><p class="t">ひと息つきたいときに。</p><p class="b">作業の合間に、そっとふれる。</p></div>
-    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/5fccf37e-67d1-4e44-8a02-9d9aea3a7dee.png" alt=""></div><p class="t">眠る前の、静かな時間に。</p><p class="b">今日の終わりに、そっとふれる。</p></div>
+    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/c46b98f3-032a-428d-81eb-9b2820d410be.png" alt=""></div><p class="t">少し疲れた日の、帰宅後に。</p><p class="b">言葉にしなくても、そばにいてくれる。</p></div>
+    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/8ff652e6-2ad9-40f1-8428-1d34b4b8a324.png" alt=""></div><p class="t">ひと息つきたいときに。</p><p class="b">作業の合間に、そっとふれる。</p></div>
+    <div class="moment"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/054289d8-1caa-4158-8382-ef93ae9192b4.png" alt=""></div><p class="t">眠る前の、静かな時間に。</p><p class="b">今日の終わりに、そっとふれる。</p></div>
   </div>
 </section>
 
@@ -474,34 +468,5 @@ yadori.は、気持ちのとなりにいる
   </div>
 </footer>
 
-<script>
-(function(){
-  var container = document.getElementById('hiwSteps');
-  if (!container) return;
-  var steps = Array.prototype.slice.call(container.querySelectorAll('.step'));
-  var current = 0;
-  var busy = false;
-
-  function goTo(nextIndex){
-    if (busy || steps.length < 2) return;
-    busy = true;
-    var currentEl = steps[current];
-    var nextEl = steps[nextIndex];
-    currentEl.classList.remove('is-visible');
-    setTimeout(function(){
-      currentEl.classList.remove('is-active');
-      nextEl.classList.add('is-active');
-      void nextEl.offsetWidth;
-      nextEl.classList.add('is-visible');
-      current = nextIndex;
-      busy = false;
-    }, 800);
-  }
-
-  container.addEventListener('click', function(){
-    goTo((current + 1) % steps.length);
-  });
-})();
-</script>
 </body>
 </html>
