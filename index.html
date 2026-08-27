@@ -48,15 +48,16 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .pc .content .tag{display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;color:#7e9075;}
 .pc .content .tag img.line{width:32px;height:auto;display:block;}
 .hiw{padding:64px 24px;display:flex;flex-direction:column;gap:48px;}
-.hiw .organic{position:absolute;opacity:.55;z-index:0;}
-.hiw .organic.o1{width:300px;top:-10px;left:-30px;transform:rotate(-9deg) skewX(3deg);}
-.hiw .organic.o2{width:260px;top:60px;right:-60px;transform:rotate(46deg) skewX(-8deg);}
+.hiw .organic{position:absolute;opacity:.55;z-index:0;pointer-events:none;}
+.hiw .organic.o1{width:190px;top:-20px;left:-30px;transform:rotate(-9deg) skewX(3deg);}
+.hiw .organic.o2{width:160px;top:10px;right:-40px;transform:rotate(46deg) skewX(-8deg);}
 .hiw .center-badge,.hiw .steps,.hiw .tap-hint{position:relative;z-index:1;}
 .hiw .steps{position:relative;max-width:420px;margin-left:auto;margin-right:auto;cursor:pointer;user-select:none;}
 .hiw .step{display:none;opacity:0;transition:opacity .8s ease-in-out;}
 .hiw .step.is-active{display:block;}
 .hiw .step.is-visible{opacity:1;}
-.hiw .step .ph{height:210px;border-radius:16px;}
+.hiw .step .ph{height:210px;border-radius:16px;background:transparent;}
+.hiw .step .ph img{object-fit:contain;}
 .hiw .num{color:#7e9075;font-weight:700;font-size:16px;}
 .hiw .t{font-size:16px;font-weight:600;margin-top:8px;font-family:'Noto Sans JP',sans-serif;}
 .hiw .b{font-size:16px;line-height:1.5;color:#635f5b;margin-top:8px;font-family:'Noto Sans JP',sans-serif;}
