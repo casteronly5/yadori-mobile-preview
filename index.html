@@ -47,9 +47,11 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .pc .content .tag{display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;color:#7e9075;}
 .pc .content .tag img.line{width:32px;height:auto;display:block;}
 .hiw{padding:64px 24px;display:flex;flex-direction:column;gap:48px;}
-.hiw .organic{position:absolute;opacity:.6;z-index:0;pointer-events:none;}
-.hiw .organic.o1{width:290px;top:60px;left:-50px;transform:rotate(-9deg) skewX(3deg);}
-.hiw .organic.o2{width:270px;top:110px;right:-60px;transform:rotate(46deg) skewX(-8deg);}
+.hiw{position:relative;overflow:hidden;}
+.hiw .organic{position:absolute;z-index:0;pointer-events:none;display:block;}
+.hiw .organic img{width:100%;height:100%;display:block;}
+.hiw .organic.o1{left:0px;top:103.01px;width:406.94px;height:339.69px;}
+.hiw .organic.o2{left:195.34px;top:47px;width:439.14px;height:385.81px;}
 .hiw .center-badge,.hiw .steps,.hiw .tap-hint{position:relative;z-index:1;}
 .hiw .steps{position:relative;max-width:420px;margin-left:auto;margin-right:auto;cursor:pointer;user-select:none;}
 .hiw .step{display:none;opacity:0;transition:opacity .8s ease-in-out;}
@@ -63,8 +65,13 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .hiw .tap-hint{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:20px;font-size:11px;color:#7e9075;opacity:.7;}
 .hiw .tap-hint .ring{width:6px;height:6px;border-radius:50%;background:#7e9075;}
 .emo{background:#efe2df;text-align:center;padding:64px 24px;}
-.emo .group2{position:absolute;width:360px;left:-70px;top:-70px;transform:rotate(-48deg);opacity:.5;pointer-events:none;z-index:0;}
-.emo .vector{position:absolute;width:60px;left:-14px;top:-12px;transform:rotate(-48deg);pointer-events:none;z-index:0;}
+.emo{position:relative;overflow:hidden;}
+.emo .group2-wrap{position:absolute;inset:-93.29% -106.24% -49.19% -39.16%;container-type:size;pointer-events:none;z-index:0;}
+.emo .group2-inner{position:relative;width:hypot(58.0111cqw,63.2324cqh);height:hypot(41.9889cqw,36.7676cqh);transform:rotate(-48.13deg);}
+.emo .group2-inner img{position:absolute;inset:0;width:100%;height:100%;display:block;}
+.emo .vector-wrap{position:absolute;left:-34px;top:-31px;width:89.78px;height:90.065px;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:0;}
+.emo .vector-inner{width:65.524px;height:61.835px;transform:rotate(-48.13deg);}
+.emo .vector-inner img{display:block;width:100%;height:100%;}
 .emo .h,.emo .b{position:relative;z-index:1;}
 .emo .h{font-size:22px;font-weight:600;font-family:'Noto Sans JP',sans-serif;}
 .emo .b{font-size:14px;line-height:1.7;color:#635f5b;margin-top:20px;white-space:pre-line;}
@@ -208,8 +215,8 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="hiw">
-  <img class="organic o1" src="https://www.figma.com/api/mcp/asset/19a010ea-8b00-4dab-83e0-308d38af10c7.svg" alt="">
-  <img class="organic o2" src="https://www.figma.com/api/mcp/asset/47084420-ab24-4a58-8ab5-72be56e3dbbe.svg" alt="">
+  <span class="organic o1"><img src="https://www.figma.com/api/mcp/asset/ed1d870a-71c6-4ffd-b77f-2af294cb4090.svg" alt=""></span>
+  <span class="organic o2"><img src="https://www.figma.com/api/mcp/asset/a2416b7e-644b-445d-9479-e9d79cd8eb29.svg" alt=""></span>
   <div class="center-badge">
     <p class="sec-h">お腹にふれると、くるん。</p>
   </div>
@@ -235,8 +242,8 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="emo">
-  <img class="group2" src="https://www.figma.com/api/mcp/asset/0e268b38-ea4b-4938-96de-be9a389548e6.svg" alt="">
-  <img class="vector" src="https://www.figma.com/api/mcp/asset/76fe6704-75c4-4b2b-95ae-dd51f67af696.svg" alt="">
+  <div class="group2-wrap"><div class="group2-inner"><img src="https://www.figma.com/api/mcp/asset/d738f96b-0341-4d01-9a53-d65c874da074.svg" alt=""></div></div>
+  <div class="vector-wrap"><div class="vector-inner"><img src="https://www.figma.com/api/mcp/asset/1118dfb9-86a9-4cb0-b2fe-e98aca714195.svg" alt=""></div></div>
   <p class="h">ただ触れると、<br>少しだけ返してくれる。</p>
   <p class="b">たくさん話しかけてくるわけでも、何かを教えてくれるわけでもありません。
 
