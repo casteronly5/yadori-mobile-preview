@@ -49,8 +49,10 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .hiw{padding:64px 24px;display:flex;flex-direction:column;gap:48px;}
 .hiw{position:relative;overflow:hidden;}
 .hiw .organic{position:absolute;z-index:0;pointer-events:none;display:block;}
-.hiw .organic.o1{left:0px;top:46.9px;width:351.29px;height:289.89px;background:#E3E3E3;opacity:.68;border-radius:45% 55% 52% 48%/48% 45% 55% 52%;transform:rotate(9.19deg);}
-.hiw .organic.o2{left:-37px;top:47px;width:299.54px;height:287.37px;background:#FFF9DA;opacity:.43;border-radius:52% 48% 45% 55%/45% 55% 48% 52%;transform:rotate(-46.34deg);}
+.hiw .organic.o1{left:1.645px;top:41.845px;width:348px;height:300px;transform:rotate(9.19deg);}
+.hiw .organic.o1 svg{display:block;width:100%;height:100%;}
+.hiw .organic.o2{left:-52.73px;top:61.685px;width:331px;height:258px;transform:rotate(-46.34deg);}
+.hiw .organic.o2 svg{display:block;width:100%;height:100%;}
 .hiw .center-badge,.hiw .steps{position:relative;z-index:1;}
 .hiw .steps{display:flex;flex-direction:column;gap:48px;}
 .hiw .step{display:flex;flex-direction:column;gap:16px;}
@@ -60,7 +62,8 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .hiw .b{font-size:16px;line-height:1.5;color:#635f5b;text-align:center;font-family:'Noto Sans JP',sans-serif;}
 .emo{background:#efe2df;text-align:center;padding:64px 24px;}
 .emo{position:relative;overflow:hidden;}
-.emo .blob-big{position:absolute;left:-133px;top:-153px;width:554.9px;height:409.57px;background:#D4CCAC;opacity:.39;border-radius:48% 52% 45% 55%/55% 45% 52% 48%;transform:rotate(48.13deg);pointer-events:none;z-index:0;}
+.emo .blob-big{position:absolute;left:-50.55px;top:-150.215px;width:390px;height:404px;transform:rotate(48.13deg);pointer-events:none;z-index:0;}
+.emo .blob-big svg{display:block;width:100%;height:100%;}
 .emo .blob-dot{position:absolute;left:317px;top:294px;width:108.69px;height:101.49px;background:#6A514C;opacity:.38;border-radius:50%;transform:rotate(48.13deg);pointer-events:none;z-index:0;}
 .emo .corner{position:absolute;left:-34px;top:-31px;width:65.52px;height:61.83px;background:#FCECDB;opacity:1;border-radius:50%;transform:rotate(48.13deg);pointer-events:none;z-index:0;}
 .emo .h,.emo .b{position:relative;z-index:1;}
@@ -206,15 +209,15 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="hiw">
-  <span class="organic o1"></span>
-  <span class="organic o2"></span>
+  <span class="organic o1"><svg width="348" height="300" viewBox="0 0 348 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.68" d="M213.065 2.59254C226.757 -0.561664 241.4 -0.538128 255.426 1.06831C312.621 7.61904 354.635 52.6107 346.307 103.243C341.266 133.89 313.875 157.222 300.617 185.052C290.465 206.363 288.423 229.622 275.14 250.167C267.18 262.38 256.331 272.965 243.315 281.22C218.754 296.959 188.741 302.462 158.81 298.402C140.744 296.668 117.834 288.346 102.61 280.001C67.2158 260.656 42.2427 230.621 23.7214 198.507C2.76241 162.168 -12.2593 118.775 13.9664 81.2198C32.6908 54.4064 63.7768 51.3236 95.5393 44.2274C102.773 42.6411 109.889 40.6695 116.848 38.3238C150.256 27.1544 177.475 9.71626 213.065 2.59254Z" fill="#E3E3E3"/></svg></span>
+  <span class="organic o2"><svg width="331" height="258" viewBox="0 0 331 258" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.43" d="M303.341 103.661C312.364 111.797 318.908 122.02 323.728 132.523C343.382 175.352 321.076 224.827 271.041 241.721C240.756 251.946 207.139 243.302 175.745 246.533C151.705 249.008 129.521 258.012 104.778 257.96C90.0409 257.884 75.4965 255.063 62.1123 249.686C36.7077 239.612 18.2183 221.146 8.51084 198.45C1.99622 185.072 -0.665511 165.363 0.139415 151.003C1.96085 117.643 18.229 86.7585 39.2911 59.442C63.1243 28.5308 96.0704 -1.40235 142.171 0.0508763C175.086 1.08829 191.843 21.3874 212.573 40.359C217.268 44.6932 222.261 48.7724 227.526 52.5738C252.719 70.867 280.869 82.0323 303.341 103.661Z" fill="#FFF9DA"/></svg></span>
   <div class="center-badge">
     <p class="sec-h">お腹にふれると、くるん。</p>
   </div>
   <div class="steps">
-    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/8c245580-2f07-459e-8096-627962f4a1f9.png" alt=""></div><p class="t">そっとふれると…</p><p class="b">そっと返してくれる。</p></div>
-    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/f96f6792-1e8c-4b50-ab1e-9b0816b2b834.png" alt=""></div></div>
-    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/4cafe485-ee2e-4306-a187-4a99d33a90d9.png" alt=""></div></div>
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/83054687-ae05-4949-b8ef-c41503d690e4.png" alt=""></div><p class="t">そっとふれると…</p><p class="b">そっと返してくれる。</p></div>
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/e738691e-20f5-4478-b437-529b3bb6a856.png" alt=""></div></div>
+    <div class="step"><div class="ph"><img src="https://www.figma.com/api/mcp/asset/6fc584a5-4d74-4e43-91a4-cdf82bc59d03.png" alt=""></div></div>
   </div>
 </section>
 
@@ -232,7 +235,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="emo">
-  <span class="blob-big"></span>
+  <span class="blob-big"><svg width="390" height="404" viewBox="0 0 390 404" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.39" d="M137.422 -41.3826C151.206 -58.2347 174.077 -70.4601 195.447 -74.1538C229.586 -80.0518 266.099 -67.0067 287.988 -40.0986C300.662 -24.5213 303.798 -10.0504 325.282 -1.84904C336.474 2.84297 348.092 0.79373 359.775 0.803254C421.101 0.853478 476.741 45.3647 485.221 107.034C490.143 142.857 486.125 176.606 464.42 206.225C442.063 237.247 407.101 256.762 368.958 259.509C357.539 260.238 343.531 258.236 333.527 259.812C315.249 262.616 299.811 274.865 292.926 292.027C291.999 294.295 291.183 296.718 290.518 299.077C285.082 318.362 277.172 337.597 265.365 353.912C264.433 355.567 259.737 361.775 258.439 363.422C229.807 399.643 187.937 422.978 142.072 428.277C96.3597 433.704 50.3787 420.589 14.4077 391.864C-22.0798 363.156 -45.3646 320.877 -50.1229 274.694C-57.9419 204.292 -22.1081 136.223 40.3569 102.821C47.2439 99.1293 54.3767 95.9148 61.7045 93.2007C80.1707 86.5431 93.1737 84.6977 105.235 66.8242C117.284 48.9683 113.226 37.3097 113.809 17.9005C114.479 -4.40367 123.62 -24.1565 137.422 -41.3826Z" fill="#D4CCAC"/></svg></span>
   <span class="blob-dot"></span>
   <span class="corner"></span>
   <p class="h">ただ触れると、<br>少しだけ返してくれる。</p>
