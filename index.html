@@ -24,10 +24,9 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
 .hero-overlay{position:absolute;inset:0;background:rgba(30,34,31,0.6);z-index:0;}
 .hero>*:not(video):not(.hero-overlay){position:relative;z-index:1;}
-.hero nav{display:flex;justify-content:space-between;align-items:center;}
-.hero .menu-icon{width:24px;height:24px;display:flex;flex-direction:column;justify-content:center;gap:5px;}
-.hero .menu-icon span{display:block;width:100%;height:1.5px;background:#efece8;}
-.hero .logo{font-size:22px;font-family:'Noto Sans JP',sans-serif;font-weight:600;}
+.hero nav{position:relative;display:flex;justify-content:space-between;align-items:center;}
+.hero .menu-icon{width:24px;height:24px;display:block;}
+.hero .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:32px;width:auto;}
 .hero .core{text-align:center;display:flex;flex-direction:column;gap:24px;align-items:center;}
 .hero .headline{font-weight:600;font-size:28px;line-height:1.5;font-family:'Noto Sans JP',sans-serif;}
 .hero .sub{font-size:13px;opacity:.8;line-height:1.6;font-family:'Gothic A1',sans-serif;}
@@ -38,7 +37,7 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .center-badge{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;position:relative;}
 .eyebrow{display:flex;flex-direction:column;align-items:center;gap:6px;}
 .eyebrow .label{font-family:'Cormorant Garamond',Georgia,serif;font-size:12px;font-weight:600;color:#7e9075;letter-spacing:.05em;text-transform:uppercase;}
-.eyebrow .line{width:24px;height:1px;background:#7e9075;}
+.eyebrow img.line{height:auto;display:block;}
 .pc{display:flex;flex-direction:column;gap:40px;padding:40px 24px 64px;}
 .pc .media{position:relative;display:flex;justify-content:center;align-items:center;}
 .pc .content{position:relative;display:flex;flex-direction:column;gap:24px;}
@@ -47,7 +46,7 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .pc .content .h{font-size:24px;font-weight:600;text-align:center;}
 .pc .content .b{font-size:14px;line-height:1.8;color:#635f5b;white-space:pre-line;text-align:center;}
 .pc .content .tag{display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;color:#7e9075;}
-.pc .content .tag .line{width:32px;height:1px;background:#7e9075;}
+.pc .content .tag img.line{width:32px;height:auto;display:block;}
 .hiw{padding:64px 24px;display:flex;flex-direction:column;gap:48px;}
 .hiw .organic{position:absolute;opacity:.55;z-index:0;}
 .hiw .organic.o1{width:300px;top:-10px;left:-30px;transform:rotate(-9deg) skewX(3deg);}
@@ -134,7 +133,10 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .timeline .nodes{margin-top:40px;}
 .timeline .node{display:flex;gap:16px;}
 .timeline .track{display:flex;flex-direction:column;align-items:center;width:24px;flex-shrink:0;}
-.timeline .dot-outer{width:18px;height:18px;border-radius:50%;border:3px solid #7e9075;background:#fbf9f5;flex-shrink:0;}
+.timeline .dot-outer{width:18px;height:18px;flex-shrink:0;display:block;}
+.timeline{position:relative;}
+.timeline .bg-deco{position:absolute;left:-50px;top:200px;width:490px;opacity:.7;pointer-events:none;z-index:0;}
+.timeline .head,.timeline .nodes{position:relative;z-index:1;}
 .timeline .trace{flex:1;width:1.5px;background:#e0dcd5;margin-top:4px;}
 .timeline .content{flex:1;padding-bottom:40px;}
 .timeline .meta{font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;color:#7e9075;font-weight:600;}
@@ -157,8 +159,13 @@ section{position:relative;overflow:hidden;padding:48px 24px;}
 .linecta .hero-img .scrim{position:absolute;inset:0;background:rgba(30,34,31,.45);z-index:0;}
 .linecta .hero-img>*{position:relative;z-index:1;}
 .linecta .brand-row{display:flex;justify-content:space-between;align-items:center;}
-.linecta .brand-row .logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;}
+.linecta .brand-row .logo-img{height:20px;width:auto;}
 .linecta .badge-outline{border:1px solid #fff;border-radius:999px;padding:4px 10px;font-size:10px;}
+.linecta .body{position:relative;overflow:hidden;}
+.linecta .cta-blobs{position:absolute;left:-81px;top:-80px;width:551px;pointer-events:none;z-index:0;}
+.linecta .eyebrow,.linecta .headline,.linecta .desc,.linecta .line-btn,.linecta .disclaimer,.linecta .tagline{position:relative;z-index:1;}
+.linecta .line-btn img{display:block;}
+.linecta .tagline .brand-dark{height:44px;width:auto;margin:0 auto;}
 .linecta .caption .kicker{font-family:'Cormorant Garamond',Georgia,serif;font-size:12px;opacity:.7;}
 .linecta .caption .line{font-size:14px;margin-top:8px;}
 .linecta .body{padding:56px 24px 64px;text-align:center;position:relative;}
@@ -187,8 +194,8 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   <video autoplay muted loop playsinline poster="hero-poster.jpg" src="hero.mp4"></video>
   <div class="hero-overlay"></div>
   <nav>
-    <div class="menu-icon"><span></span><span></span><span></span></div>
-    <span class="logo">YADORI</span>
+    <img class="menu-icon" src="https://www.figma.com/api/mcp/asset/4aeaace0-e2ec-4acf-a408-7e1cf4fe22c8.svg" alt="menu">
+    <img class="logo" src="https://www.figma.com/api/mcp/asset/f226351c-3245-43ae-81b4-f6d1efdd2b05.png" alt="YADORI">
   </nav>
   <div class="core">
     <p class="headline">触れると、くるん。</p>
@@ -224,7 +231,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 そんなとき、言葉にしなくてもいい。ただ触れて、少しだけひと休み。
 
 「yadori.」は、そんな時間のそばにいます。</p>
-    <div class="tag"><span class="line"></span><span class="serif">The Art of Quiet Response</span></div>
+    <div class="tag"><img class="line" src="https://www.figma.com/api/mcp/asset/35efd866-c999-4cf3-94e4-79253e596404.svg" alt=""><span class="serif">The Art of Quiet Response</span></div>
   </div>
 </section>
 
@@ -315,7 +322,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   <div class="about-header">
     <div class="eyebrow">
       <span class="label">About Yadori</span>
-      <span class="line"></span>
+      <img class="line" style="width:20px" src="https://www.figma.com/api/mcp/asset/42eb2280-82af-4f6e-bb88-ffcd9dbba899.svg" alt="">
     </div>
     <p class="headline">そばにいる、ということ。</p>
   </div>
@@ -336,7 +343,7 @@ yadori.は、気持ちのとなりにいる
   <div class="story-header">
     <div class="eyebrow">
       <span class="label">Our Story</span>
-      <span class="line"></span>
+      <img class="line" style="width:24px" src="https://www.figma.com/api/mcp/asset/770670a6-49ab-4ee5-bbda-3b6465738cb7.svg" alt="">
     </div>
     <p class="headline">この子が生まれたきっかけ</p>
   </div>
@@ -351,17 +358,18 @@ yadori.は、気持ちのとなりにいる
 </section>
 
 <section class="timeline">
+  <img class="bg-deco" src="https://www.figma.com/api/mcp/asset/d01a16ef-fafa-4f85-a68b-ff4262d20924.svg" alt="">
   <div class="head">
     <div class="eyebrow">
       <span class="label">Development</span>
-      <span class="line"></span>
+      <img class="line" style="width:24px" src="https://www.figma.com/api/mcp/asset/c9fab3fd-2afe-4419-a852-7ea6e11d1694.svg" alt="">
     </div>
     <p class="headline">アイデアから、<br>かたちになるまで。</p>
     <p class="b">小さなアイデアから始まった、はりりん。触れたときの反応や、抱きしめたときのやわらかさまで。試作と改良を重ねながら、少しずつかたちにしてきました。</p>
   </div>
   <div class="nodes">
     <div class="node">
-      <div class="track"><div class="dot-outer"></div><div class="trace"></div></div>
+      <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""><div class="trace"></div></div>
       <div class="content">
         <p class="meta serif">2026.02 — IDEA</p>
         <p class="title">最初のインスピレーション</p>
@@ -370,7 +378,7 @@ yadori.は、気持ちのとなりにいる
       </div>
     </div>
     <div class="node">
-      <div class="track"><div class="dot-outer"></div><div class="trace"></div></div>
+      <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""><div class="trace"></div></div>
       <div class="content">
         <p class="meta serif">03-04 — FINDING PARTNERS</p>
         <p class="title">想いを共にする仲間探し</p>
@@ -379,7 +387,7 @@ yadori.は、気持ちのとなりにいる
       </div>
     </div>
     <div class="node">
-      <div class="track"><div class="dot-outer"></div><div class="trace"></div></div>
+      <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""><div class="trace"></div></div>
       <div class="content">
         <p class="meta serif">05 — DESIGN</p>
         <p class="title">愛らしさと仕組みの融合</p>
@@ -388,7 +396,7 @@ yadori.は、気持ちのとなりにいる
       </div>
     </div>
     <div class="node">
-      <div class="track"><div class="dot-outer"></div></div>
+      <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""></div>
       <div class="content">
         <p class="meta serif">06-08 — PROTOTYPE &amp; TESTING</p>
         <p class="title">試作を重ねて、あなたのそばへ</p>
@@ -404,7 +412,7 @@ yadori.は、気持ちのとなりにいる
   <div class="head">
     <div class="eyebrow">
       <span class="label">FAQ</span>
-      <span class="line"></span>
+      <img class="line" style="width:24px" src="https://www.figma.com/api/mcp/asset/770670a6-49ab-4ee5-bbda-3b6465738cb7.svg" alt="">
     </div>
     <p class="headline">よくあるご質問</p>
   </div>
@@ -424,7 +432,7 @@ yadori.は、気持ちのとなりにいる
     <img class="bg" src="https://www.figma.com/api/mcp/asset/e6898d36-9d59-49a2-a010-8fabdfc94d58.png" alt="">
     <div class="scrim"></div>
     <div class="brand-row">
-      <span class="logo serif">YADORI</span>
+      <img class="logo-img" src="https://www.figma.com/api/mcp/asset/020752fb-6d42-4237-97ea-5f5a6920d03a.png" alt="YADORI">
       <span class="badge-outline">Coming Soon</span>
     </div>
     <div class="caption">
@@ -433,16 +441,17 @@ yadori.は、気持ちのとなりにいる
     </div>
   </div>
   <div class="body">
+    <img class="cta-blobs" src="https://www.figma.com/api/mcp/asset/e28cb5e8-3e3f-48ff-a50a-b8b7a7b22d2e.svg" alt="">
     <div class="eyebrow">
       <span class="label">Line Registration</span>
-      <span class="line"></span>
+      <img class="line" style="width:28px" src="https://www.figma.com/api/mcp/asset/a012fca2-57f9-4132-95b3-94edf75fd754.svg" alt="">
     </div>
     <p class="headline">この子をお迎えしたい方へ</p>
     <p class="desc">発売情報や先行販売のお知らせを、<br>LINEでいち早くお届けします。<br>ゆっくりと、お友だち登録をしてお待ちください。</p>
-    <button class="line-btn">LINEでこの子の情報を受け取る</button>
+    <button class="line-btn"><img src="https://www.figma.com/api/mcp/asset/cd72575f-61b1-4735-b3d2-20f2001878c3.svg" alt="" style="width:20px;height:20px;">LINEでこの子の情報を受け取る</button>
     <p class="disclaimer">※先行販売は数量限定となります。<br>販売開始前日に、LINEへ優先購入URLをお送りいたします。</p>
     <div class="tagline">
-      <p class="brand serif">YADORI</p>
+      <img class="brand-dark" src="https://www.figma.com/api/mcp/asset/c974204b-e40d-4b30-b765-d71b60b07582.png" alt="YADORI">
       <p class="sub">気持ちのとなり。</p>
     </div>
   </div>
