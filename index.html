@@ -53,6 +53,13 @@ html.nav-open{overflow:hidden;}
 .hero .bottom{display:flex;flex-direction:column;align-items:center;gap:16px;}
 .hero .btn{background:rgba(36,242,120,.21);color:#efece8;width:100%;text-align:center;}
 .hero .disclaimer{font-size:11px;opacity:.5;line-height:1.4;text-align:center;font-family:'Noto Sans JP',sans-serif;margin-top:4px;}
+.float-cta{display:flex;align-items:center;justify-content:center;gap:10px;position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(12px);width:calc(100% - 48px);max-width:382px;z-index:45;background:rgba(36,242,120,.92);color:#efece8;border:none;border-radius:999px;padding:14px 24px;font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;box-shadow:0 8px 20px rgba(0,0,0,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s cubic-bezier(0.4,0,0.2,1),transform .3s cubic-bezier(0.4,0,0.2,1),visibility 0s linear .3s;}
+.float-cta svg{flex:none;}
+.float-cta.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);transition:opacity .3s cubic-bezier(0.4,0,0.2,1),transform .3s cubic-bezier(0.4,0,0.2,1),visibility 0s linear 0s;}
+@media (prefers-reduced-motion:reduce){
+.float-cta{transition:opacity .01s linear;transform:translateX(-50%);}
+.float-cta.is-visible{transition:opacity .01s linear;transform:translateX(-50%);}
+}
 .blob{position:absolute;pointer-events:none;}
 .center-badge{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;position:relative;}
 .eyebrow{display:flex;flex-direction:column;align-items:center;gap:6px;}
@@ -335,10 +342,12 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   </div>
 </section>
 
+<button type="button" class="float-cta" id="floatCta" aria-hidden="true" tabindex="-1"><svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.1798 13.8452C17.4924 13.5327 17.668 13.1088 17.668 12.6667V2.66667C17.668 2.22465 17.4924 1.80072 17.1798 1.48816C16.8672 1.1756 16.4433 1 16.0012 1H2.6668C2.22474 1 1.80078 1.1756 1.48819 1.48816C1.17561 1.80072 1 2.22465 1 2.66667V16.2384C1.00002 16.3554 1.03473 16.4698 1.09975 16.5671C1.16477 16.6644 1.25717 16.7402 1.36529 16.785C1.4734 16.8297 1.59236 16.8415 1.70713 16.8186C1.8219 16.7958 1.92733 16.7395 2.01008 16.6567L3.84523 14.8217C4.15774 14.5091 4.58163 14.3335 5.02365 14.3334H16.0012C16.4433 14.3334 16.8672 14.1578 17.1798 13.8452Z" stroke="#EFECE8" stroke-width="2" stroke-linecap="round"/></svg>LINEで限定情報を受け取る</button>
+
 <div class="nav-overlay" id="siteNavOverlay" aria-hidden="true">
   <nav class="nav-panel" aria-label="サイトナビゲーション">
-    <a href="#concept">Concept</a>
     <a href="#how-it-works">How it Works</a>
+    <a href="#concept">Concept</a>
     <a href="#product">yadori.</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
@@ -764,6 +773,37 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   }, {threshold:0.2, rootMargin:'0px 0px -10% 0px'});
 
   targets.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var floatBtn = document.getElementById('floatCta');
+  var heroBtn = document.querySelector('.hero .btn');
+  var finalBtn = document.querySelector('.linecta .line-btn');
+  if(!floatBtn || !heroBtn || !finalBtn || !('IntersectionObserver' in window)) return;
+
+  var heroGone = false;
+  var finalHere = false;
+
+  function update(){
+    var show = heroGone && !finalHere;
+    floatBtn.classList.toggle('is-visible', show);
+    floatBtn.setAttribute('aria-hidden', show ? 'false' : 'true');
+    floatBtn.tabIndex = show ? 0 : -1;
+  }
+
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      heroGone = !entry.isIntersecting;
+      update();
+    });
+  }, {threshold:0}).observe(heroBtn);
+
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      finalHere = entry.isIntersecting;
+      update();
+    });
+  }, {threshold:0}).observe(finalBtn);
 })();
 </script>
 </body>
