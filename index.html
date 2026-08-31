@@ -51,8 +51,8 @@ html.nav-open{overflow:hidden;}
 .hero .headline{font-weight:600;font-size:28px;line-height:1.5;font-family:'Noto Sans JP',sans-serif;}
 .hero .sub{font-size:13px;opacity:.8;line-height:1.6;font-family:'Noto Sans JP',sans-serif;}
 .hero .bottom{display:flex;flex-direction:column;align-items:center;gap:16px;}
-.hero .btn{background:#06c755;color:#efece8;width:100%;text-align:center;}
-.hero .scroll{font-size:11px;opacity:.5;}
+.hero .btn{background:rgba(36,242,120,.21);color:#efece8;width:100%;text-align:center;}
+.hero .disclaimer{font-size:11px;opacity:.5;line-height:1.4;text-align:center;font-family:'Noto Sans JP',sans-serif;margin-top:4px;}
 .blob{position:absolute;pointer-events:none;}
 .center-badge{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;position:relative;}
 .eyebrow{display:flex;flex-direction:column;align-items:center;gap:6px;}
@@ -110,13 +110,13 @@ html.nav-open{overflow:hidden;}
 .pers .b1{left:-76px;top:154px;width:347px;height:343px;border-radius:150px;background:#f5efe0;opacity:.4;}
 .cs{padding:64px 24px;display:flex;flex-direction:column;gap:40px;}
 .cs .center-badge{position:relative;z-index:1;}
-.cs .note{font-size:13px;color:#635f5b;line-height:1.6;margin-top:4px;font-family:'Noto Sans JP',sans-serif;}
+.cs .note{font-size:13px;color:#635f5b;line-height:1.6;text-align:center;font-family:'Noto Sans JP',sans-serif;}
 .cs .cards{display:flex;flex-direction:column;gap:24px;position:relative;z-index:1;}
 .cs .card{border:1px solid #ebe6e0;border-radius:16px;padding:16px;background:#fbf9f5;}
 .cs .ph{height:196px;border-radius:12px;}
 .cs .card .name{font-size:16px;font-weight:700;margin-top:10px;text-align:center;}
 .cs .b1{left:-46px;top:35px;width:280px;height:280px;border-radius:140px;background:#efe2df;opacity:.35;}
-.pf{background:#fbf9f5;padding:40px 24px 64px;display:flex;flex-direction:column;gap:32px;}
+.pf{background:#fbf9f5;padding:40px 24px 64px;display:flex;flex-direction:column;gap:20px;}
 .pf .title{text-align:center;}
 .pf .title .eng{font-size:18px;font-weight:600;letter-spacing:.04em;font-family:'Noto Sans JP',sans-serif;}
 .pf .title .sub{color:#7e9075;font-size:16px;font-weight:500;line-height:1.6;margin-top:6px;font-family:'Noto Sans JP',sans-serif;}
@@ -130,6 +130,7 @@ html.nav-open{overflow:hidden;}
 .pf .spec .row+.row{border-top:1px solid #ebe6e0;}
 .pf .spec .k{font-weight:600;color:#635f5b;white-space:nowrap;font-family:'Noto Sans JP',sans-serif;}
 .pf .spec .v{color:#2a2826;text-align:right;font-family:'Noto Sans JP',sans-serif;}
+.pf .spec-note{font-size:10px;line-height:1.8;color:#635f5b;font-family:'Noto Sans JP',sans-serif;}
 .pf .gallery{display:flex;gap:8px;}
 .pf .gallery .g{flex:1;aspect-ratio:1;border-radius:12px;overflow:hidden;}
 .pf .gallery img{width:100%;height:100%;object-fit:cover;}
@@ -305,11 +306,11 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   </nav>
   <div class="core">
     <p class="headline">触れると、くるん。</p>
-    <p class="sub">手のひらに寄り添う、<br>小さなハリネズミ - はりりん。</p>
+    <p class="sub">両手にそっとおさまる、<br>小さなハリネズミ。</p>
   </div>
   <div class="bottom">
-    <button class="btn">LINEで先行情報を受け取る</button>
-    <span class="scroll serif">SCROLL DOWN</span>
+    <button class="btn">LINEで限定情報を受け取る</button>
+    <p class="disclaimer">※LINEでは、お得なクーポンや数量限定リターン<br>を事前にお知らせします。</p>
   </div>
 </section>
 
@@ -402,11 +403,11 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   <div class="blob b1 rv-deco"></div>
   <div class="center-badge rv">
     <p class="sec-h"><span style="font-size:22px;display:block;">COLOR VARIATIONS</span><span style="font-size:20px;">それぞれの色、それぞれのかわいさ。</span></p>
-    <p class="note">はりりんのカラーは、ただいま準備中。<br>どの子に会えるかは、もう少し先のお楽しみ。</p>
   </div>
   <div class="cards rv rv-d1">
     <div class="card"><div class="ph"><img src="assets/images/color-variants-photo.jpg" alt=""></div></div>
   </div>
+  <p class="note rv rv-d2">はりりんのカラーは、現在準備中。<br>LINEでは、発売予定カラーの先行公開や<br>カラーアンケートもお届けします。</p>
 </section>
 
 <section class="pf" id="product" data-reveal>
@@ -424,9 +425,10 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
     <div class="spec">
       <div class="row"><span class="k">サイズ</span><span class="v">約幅10cm × 高さ15cm × 奥行10cm</span></div>
       <div class="row"><span class="k">充電時間</span><span class="v">約2.5〜3時間</span></div>
-      <div class="row"><span class="k">連続使用時間</span><span class="v">約4時間</span></div>
+      <div class="row"><span class="k">使用時間</span><span class="v">約8時間</span></div>
       <div class="row"><span class="k">主な材質</span><span class="v">ポリエステル、ABS樹脂ほか</span></div>
     </div>
+    <p class="spec-note">※開発中のため、仕様・デザインは変更となる場合があります。<br>※使用時間は、使用環境や動作回数によって異なります。</p>
   </div>
   <div class="gallery rv rv-d2">
     <div class="g"><img src="assets/images/gallery-01.jpg" alt=""></div>
@@ -498,26 +500,17 @@ yadori.は、気持ちのとなりにいる
       <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""><div class="trace"></div></div>
       <div class="content">
         <p class="meta serif">2026.02 — IDEA</p>
-        <p class="title">最初のインスピレーション</p>
-        <p class="desc">娘との何気ない時間からアイデアが生まれ、愛らしいハリネズミの表情を模索した最初のデザインスケッチを描きました。</p>
+        <p class="title">小さな発見から</p>
+        <p class="desc">娘と見つけたダンゴムシから、最初のアイデアが生まれました。</p>
         <div class="img"><img src="assets/images/timeline-01-photo.jpg" alt=""></div>
       </div>
     </div>
     <div class="node">
       <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""><div class="trace"></div></div>
       <div class="content">
-        <p class="meta serif">03-04 — FINDING PARTNERS</p>
-        <p class="title">想いを共にする仲間探し</p>
-        <p class="desc">アイデアを現実の温度へ引き上げるため、感性豊かなエンジニアや職人気質の工場など、さまざまなパートナーと開発に向けた準備を進めました。</p>
-        <div class="img"><img src="assets/images/timeline-02-photo.jpg" alt=""></div>
-      </div>
-    </div>
-    <div class="node">
-      <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""><div class="trace"></div></div>
-      <div class="content">
-        <p class="meta serif">05 — DESIGN</p>
-        <p class="title">愛らしさと仕組みの融合</p>
-        <p class="desc">触れた瞬間優しく丸まる。その豊かな質感と愛らしい佇まいを精密に計算し、表情やフォルム、内部構造を検討しながら3Dモデルを制作しました。</p>
+        <p class="meta serif">03-05 — DESIGN</p>
+        <p class="title">動きと抱き心地を考える</p>
+        <p class="desc">表情、フォルム、内部構造まで、何度も検討を重ねました。</p>
         <div class="img"><img src="assets/images/timeline-03-photo.jpg" alt=""></div>
       </div>
     </div>
@@ -526,7 +519,7 @@ yadori.は、気持ちのとなりにいる
       <div class="content">
         <p class="meta serif">06-08 — PROTOTYPE &amp; TESTING</p>
         <p class="title">試作を重ねて、あなたのそばへ</p>
-        <p class="desc">内部構造から、生地や色合いまで。何度も試作と改良を重ね、少しずつ、今のかたちへ近づけてきました。</p>
+        <p class="desc">内部構造から、記事や色合いまで。試作とテストを繰り返し、少しずつ今の姿に近づいてきました。</p>
         <div class="img"><img src="assets/images/timeline-04-photo.jpg" alt=""></div>
         <p class="note">※開発過程で制作した試作品です。販売予定のカラーとは異なる場合があります。</p>
       </div>
@@ -547,9 +540,10 @@ yadori.は、気持ちのとなりにいる
     <div class="item"><span class="num serif">02</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2"><span class="q">どこに触れると反応しますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-2" role="region" aria-labelledby="faq-q-2"><p class="a">おなかをやさしくなでたり、そっと触れたりすると反応します。触れ方によって変わる仕草をお楽しみください。</p></div></div></div>
     <div class="item"><span class="num serif">03</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3"><span class="q">音声や会話機能はありますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-3" role="region" aria-labelledby="faq-q-3"><p class="a">音声や会話機能はありません。触れると仕草で応えてくれる、シンプルでやさしいふれあいを大切にしています。</p></div></div></div>
     <div class="item"><span class="num serif">04</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4"><span class="q">子どもでも使えますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-4" role="region" aria-labelledby="faq-q-4"><p class="a">お子さまにもお楽しみいただけます。小さなお子さまが使用する際は、安全のため保護者の方と一緒にお楽しみください。</p></div></div></div>
-    <div class="item"><span class="num serif">05</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5"><span class="q">どのように充電しますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-5" role="region" aria-labelledby="faq-q-5"><p class="a">USB Type-C 充電式です。付属の充電ケーブルを使用して充電してください。詳しくは、商品に同梱されている取扱説明書をご確認ください。</p></div></div></div>
+    <div class="item"><span class="num serif">05</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5"><span class="q">どのように充電しますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-5" role="region" aria-labelledby="faq-q-5"><p class="a">付属のUSB Type-Cケーブルで充電できます。充電時間は約2.5〜3時間です。<br>※充電用アダプターの付属有無は、商品仕様をご確認ください。</p></div></div></div>
     <div class="item"><span class="num serif">06</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-6" aria-expanded="false" aria-controls="faq-a-6"><span class="q">汚れた場合は洗えますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-6" role="region" aria-labelledby="faq-q-6"><p class="a">内部に機械部品が入っているため、丸洗いはできません。汚れた部分を、固く絞ったやわらかい布でやさしく拭いてください。</p></div></div></div>
-    <div class="item"><span class="num serif">07</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-7" aria-expanded="false" aria-controls="faq-a-7"><span class="q">故障した場合はどうすればよいですか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-7" role="region" aria-labelledby="faq-q-7"><p class="a">商品到着日から１年間の保証が付いています。保証期間内に不具合が生じた場合は、yadori.のお問い合わせ窓口までご連絡ください。</p></div></div></div>
+    <div class="item"><span class="num serif">07</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-7" aria-expanded="false" aria-controls="faq-a-7"><span class="q">いつ、どこで購入できますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-7" role="region" aria-labelledby="faq-q-7"><p class="a">現在、先行販売に向けて準備中です。発売時期や販売ページについては、LINEでいち早くお知らせします。</p></div></div></div>
+    <div class="item"><span class="num serif">08</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-8" aria-expanded="false" aria-controls="faq-a-8"><span class="q">故障した場合はどうすればよいですか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-8" role="region" aria-labelledby="faq-q-8"><p class="a">商品到着日から１年間の保証が付いています。保証期間内に不具合が生じた場合は、yadori.のお問い合わせ窓口までご連絡ください。</p></div></div></div>
   </div>
 </section>
 
