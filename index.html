@@ -244,6 +244,7 @@ footer .col p{font-size:13px;color:#635f5b;margin-top:10px;}
 footer .col a{font-size:13px;color:#635f5b;margin-top:10px;display:block;text-decoration:none;}
 footer .bottom{margin-top:48px;padding-top:0;font-size:12px;color:#635f5b;}
 footer .bottom .sns{display:flex;gap:24px;}
+footer .bottom .sns a{color:inherit;text-decoration:none;}
 footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 .hiw .step .ph.hiw-stage{-webkit-appearance:none;appearance:none;border:0;margin:0;width:100%;font:inherit;-webkit-tap-highlight-color:transparent;cursor:pointer;}
 .hiw .step .ph.hiw-stage:focus-visible{outline:2px solid #7e9075;outline-offset:3px;}
@@ -252,9 +253,29 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 .hiw-dots{display:flex;justify-content:center;gap:8px;margin-top:2px;}
 .hiw-dots .dot{width:6px;height:6px;border-radius:50%;background:#ddd7cd;transition:background .6s ease;}
 .hiw-dots .dot.is-active{background:#7e9075;}
+.hiw .center-badge .sec-h.hiw-cue{cursor:default;}
+.hiw .center-badge .sec-h.hiw-cue .hiw-cue-em{display:inline-block;}
+[data-reveal].is-revealed .hiw .center-badge .sec-h.hiw-cue{animation:hiwCueNudge 4s cubic-bezier(0.4,0,0.2,1) infinite;}
+[data-reveal].is-revealed .hiw .center-badge .sec-h.hiw-cue .hiw-cue-em{animation:hiwCueScale 4s cubic-bezier(0.4,0,0.2,1) infinite;}
+[data-reveal].is-revealed .hiw .step .ph.hiw-stage{animation:hiwCueEcho 4s cubic-bezier(0.4,0,0.2,1) infinite;}
+@keyframes hiwCueNudge{
+0%,15%,100%{transform:translateY(0);}
+6%{transform:translateY(5px);}
+}
+@keyframes hiwCueScale{
+0%,15%,100%{transform:scale(1);}
+6%{transform:scale(1.05);}
+}
+@keyframes hiwCueEcho{
+0%,21%,35%,100%{transform:scale(1);}
+27%{transform:scale(1.015);}
+}
 @media (prefers-reduced-motion:reduce){
 .hiw-img{transition:none;}
 .hiw-dots .dot{transition:none;}
+.hiw .center-badge .sec-h.hiw-cue,
+.hiw .center-badge .sec-h.hiw-cue .hiw-cue-em,
+.hiw .step .ph.hiw-stage{animation:none;}
 }
 
 /* unified section scroll-reveal rhythm */
@@ -318,7 +339,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   <nav class="nav-panel" aria-label="サイトナビゲーション">
     <a href="#concept">Concept</a>
     <a href="#how-it-works">How it Works</a>
-    <a href="#product">YADORI</a>
+    <a href="#product">yadori.</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -328,7 +349,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   <span class="organic o1 rv-deco"><svg width="348" height="300" viewBox="0 0 348 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.68" d="M213.065 2.59254C226.757 -0.561664 241.4 -0.538128 255.426 1.06831C312.621 7.61904 354.635 52.6107 346.307 103.243C341.266 133.89 313.875 157.222 300.617 185.052C290.465 206.363 288.423 229.622 275.14 250.167C267.18 262.38 256.331 272.965 243.315 281.22C218.754 296.959 188.741 302.462 158.81 298.402C140.744 296.668 117.834 288.346 102.61 280.001C67.2158 260.656 42.2427 230.621 23.7214 198.507C2.76241 162.168 -12.2593 118.775 13.9664 81.2198C32.6908 54.4064 63.7768 51.3236 95.5393 44.2274C102.773 42.6411 109.889 40.6695 116.848 38.3238C150.256 27.1544 177.475 9.71626 213.065 2.59254Z" fill="#E3E3E3"/></svg></span>
   <span class="organic o2 rv-deco"><svg width="331" height="258" viewBox="0 0 331 258" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.43" d="M303.341 103.661C312.364 111.797 318.908 122.02 323.728 132.523C343.382 175.352 321.076 224.827 271.041 241.721C240.756 251.946 207.139 243.302 175.745 246.533C151.705 249.008 129.521 258.012 104.778 257.96C90.0409 257.884 75.4965 255.063 62.1123 249.686C36.7077 239.612 18.2183 221.146 8.51084 198.45C1.99622 185.072 -0.665511 165.363 0.139415 151.003C1.96085 117.643 18.229 86.7585 39.2911 59.442C63.1243 28.5308 96.0704 -1.40235 142.171 0.0508763C175.086 1.08829 191.843 21.3874 212.573 40.359C217.268 44.6932 222.261 48.7724 227.526 52.5738C252.719 70.867 280.869 82.0323 303.341 103.661Z" fill="#FFF9DA"/></svg></span>
   <div class="center-badge rv">
-    <p class="sec-h">お腹にふれると、くるん。</p>
+    <p class="sec-h hiw-cue">お腹にふれると、<span class="hiw-cue-em">くるん。</span></p>
   </div>
   <div class="steps rv rv-d1">
     <div class="step">
@@ -580,11 +601,11 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 <footer>
   <div class="cols">
     <div class="col"><p class="head">ABOUT</p><a href="#concept">Concept</a><a href="#how-it-works">How it Works</a></div>
-    <div class="col"><p class="head">PRODUCT</p><a href="#product">YADORI</a></div>
+    <div class="col"><p class="head">PRODUCT</p><a href="#product">yadori.</a></div>
     <div class="col"><p class="head">SUPPORT</p><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
   </div>
   <div class="bottom">
-    <div class="sns"><span>Instagram</span><span>Notes</span></div>
+    <div class="sns"><a href="https://www.instagram.com/xiaopa_jp/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://note.com/yadori_jp" target="_blank" rel="noopener noreferrer">Notes</a></div>
     <p class="copy">© 2026 yadori Inc. All rights reserved.</p>
   </div>
 </footer>
