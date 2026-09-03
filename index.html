@@ -79,10 +79,10 @@ html.nav-open{overflow:hidden;}
 .hiw{padding:64px 24px;display:flex;flex-direction:column;gap:48px;}
 .hiw{position:relative;overflow:hidden;}
 .hiw .organic{position:absolute;z-index:0;pointer-events:none;display:block;}
-.hiw .organic.o1{left:29.47px;top:66.72px;width:348px;height:300px;transform:rotate(-9.19deg);}
-.hiw .organic.o1 svg{display:block;width:100%;height:100%;}
-.hiw .organic.o2{left:44.28px;top:110.89px;width:331px;height:258px;transform:rotate(21.34deg);}
-.hiw .organic.o2 svg{display:block;width:100%;height:100%;}
+.hiw .organic.o1{left:27.82px;top:71.8px;width:351.291px;height:289.886px;transform:rotate(-9.19deg) skewX(2.79deg);}
+.hiw .organic.o1 img{display:block;width:100%;height:100%;}
+.hiw .organic.o2{left:32.8px;top:96.22px;width:299.544px;height:287.366px;transform:rotate(46.34deg) skewX(-7.61deg) scaleY(.99);}
+.hiw .organic.o2 img{display:block;width:100%;height:100%;}
 .hiw .center-badge,.hiw .steps{position:relative;z-index:1;}
 .hiw .steps{display:flex;flex-direction:column;gap:48px;}
 .hiw .step{display:flex;flex-direction:column;gap:16px;}
@@ -93,13 +93,13 @@ html.nav-open{overflow:hidden;}
 .emo{background:#efe2df;text-align:center;padding:64px 24px;}
 .emo{position:relative;overflow:hidden;}
 .emo .blob-big{position:absolute;left:-145.4px;top:103.78px;width:555px;height:410px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
-.emo .blob-big svg{display:block;width:100%;height:100%;}
+.emo .blob-big img{display:block;width:100%;height:100%;}
 .emo .blob-dot{position:absolute;left:316.85px;top:293.75px;width:109px;height:102px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
-.emo .blob-dot svg{display:block;width:100%;height:100%;}
+.emo .blob-dot img{display:block;width:100%;height:100%;}
 .emo .dot2{position:absolute;left:307px;top:-23px;width:86px;height:86px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
-.emo .dot2 svg{display:block;width:100%;height:100%;}
-.emo .corner{position:absolute;left:-21.11px;top:-17.97px;width:64px;height:64px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
-.emo .corner svg{display:block;width:100%;height:100%;}
+.emo .dot2 img{display:block;width:100%;height:100%;}
+.emo .corner{position:absolute;left:-21.11px;top:-17.97px;width:32px;height:62px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
+.emo .corner img{display:block;width:100%;height:100%;}
 .emo .h,.emo .b{position:relative;z-index:1;}
 .emo .h{font-size:22px;font-weight:600;font-family:'Noto Sans JP',sans-serif;}
 .emo .b{font-size:14px;line-height:1.7;color:#635f5b;margin-top:20px;white-space:pre-line;font-family:'Noto Sans JP',sans-serif;}
@@ -110,7 +110,7 @@ html.nav-open{overflow:hidden;}
 .dl .t{font-size:16px;font-weight:600;margin-top:12px;font-family:'Noto Sans JP',sans-serif;}
 .dl .b{font-size:13px;line-height:1.6;color:#635f5b;margin-top:6px;font-family:'Noto Sans JP',sans-serif;}
 .dl .b1{left:180px;top:320px;width:260px;height:260px;border-radius:130px;background:#efe2df;opacity:.35;}
-.dl .b2{left:-59px;top:951px;width:260px;height:260px;border-radius:130px;background:#efe2df;opacity:.35;}
+.dl .b2{left:-67px;top:759px;width:310px;height:324px;border-radius:155px/162px;background:rgba(218,202,143,0.68);opacity:.35;}
 .pers{background:#d4e0d1;display:flex;flex-direction:column;gap:32px;padding:48px 24px 64px;}
 .pers .ph{height:240px;border-radius:20px;position:relative;z-index:1;}
 .pers .content{position:relative;display:flex;flex-direction:column;gap:20px;z-index:1;}
@@ -124,8 +124,9 @@ html.nav-open{overflow:hidden;}
 .cs .card{border:1px solid #ebe6e0;border-radius:16px;padding:16px;background:#fbf9f5;}
 .cs .ph{height:196px;border-radius:12px;}
 .cs .card .name{font-size:16px;font-weight:700;margin-top:10px;text-align:center;}
-.cs .b1{left:-46px;top:35px;width:280px;height:280px;border-radius:140px;background:#efe2df;opacity:.35;}
+.cs .b1{left:-46px;top:35px;width:280px;height:280px;border-radius:140px;background:#7e9075;opacity:.35;}
 .pf{background:#fbf9f5;padding:40px 24px 64px;display:flex;flex-direction:column;gap:20px;}
+.pf .b1{left:121px;top:12px;width:319px;height:319px;border-radius:148px;background:#a4ebd3;opacity:.35;}
 .pf .title{text-align:center;}
 .pf .title .eng{font-size:18px;font-weight:600;letter-spacing:.04em;font-family:'Noto Sans JP',sans-serif;}
 .pf .title .sub{color:#7e9075;font-size:16px;font-weight:500;line-height:1.6;margin-top:6px;font-family:'Noto Sans JP',sans-serif;}
@@ -146,15 +147,16 @@ html.nav-open{overflow:hidden;}
 .cta{background:rgba(36,242,120,.21);color:#2a2826;text-align:center;padding:80px 24px;}
 .cta .h{font-size:22px;font-weight:600;position:relative;font-family:'Noto Sans JP',sans-serif;}
 .cta .b{font-size:13px;opacity:.6;line-height:1.6;margin-top:16px;position:relative;font-family:'Noto Sans JP',sans-serif;}
-.cta .b1{left:-95px;top:-83px;width:280px;height:280px;border-radius:140px;background:#e0dcd5;opacity:.4;}
+.cta .b1{left:-16px;top:-92px;width:320px;height:280px;border-radius:140px;background:#e0dcd5;opacity:.4;}
 .about{background:#fbf9f5;text-align:center;padding:72px 32px 80px;display:flex;flex-direction:column;gap:40px;}
 .about .about-header{display:flex;flex-direction:column;gap:16px;align-items:center;position:relative;z-index:1;}
 .about .headline{font-size:15px;font-weight:500;font-family:'Noto Sans JP',sans-serif;}
 .about .prose{font-size:14px;line-height:2;color:#635f5b;white-space:pre-line;position:relative;z-index:1;font-family:'Noto Sans JP',sans-serif;}
 .about .frame{height:240px;border-radius:24px;overflow:hidden;border:1px solid #ebe6e0;box-shadow:0 8px 20px rgba(49,37,30,.05);position:relative;z-index:1;}
 .about img{width:100%;height:100%;object-fit:cover;}
-.about .b1{left:-65px;top:38px;width:180px;height:179px;}
-.about .b2{right:-50px;bottom:200px;width:220px;height:200px;}
+.about .b1{left:-91.36px;top:38.55px;width:256.59px;height:276.584px;transform:rotate(21.67deg);}
+.about .b2{right:-152px;bottom:207px;width:334px;height:304px;}
+.about .b1 img,.about .b2 img{display:block;width:100%;height:100%;}
 .about .b1 svg,.about .b2 svg{display:block;width:100%;height:100%;}
 .story{background:#fbf9f5;text-align:center;padding:72px 24px 80px;display:flex;flex-direction:column;gap:48px;}
 .story .story-header{display:flex;flex-direction:column;gap:16px;align-items:center;position:relative;z-index:1;}
@@ -164,9 +166,9 @@ html.nav-open{overflow:hidden;}
 .story .card{background:#faf8f4;border:1px solid #ebe6e0;border-radius:24px;padding:16px;box-shadow:0 8px 8px rgba(49,37,30,.03);position:relative;z-index:1;}
 .story .card .img{height:200px;border-radius:16px;overflow:hidden;}
 .story .card img{width:100%;height:100%;object-fit:cover;}
-.story .b1{left:-50px;top:140px;width:180px;height:160px;}
-.story .b2{right:-40px;bottom:120px;width:220px;height:200px;}
-.story .b1 svg,.story .b2 svg{display:block;width:100%;height:100%;}
+.story .b1{left:-185px;top:-140px;width:370px;height:356px;}
+.story .b2{right:-108px;bottom:120px;width:288px;height:262px;}
+.story .b1 img,.story .b2 img{display:block;width:100%;height:100%;}
 .timeline{background:#fbf9f5;padding:80px 24px;}
 .timeline .head{text-align:center;display:flex;flex-direction:column;gap:20px;align-items:center;}
 .timeline .head .headline{font-size:22px;font-weight:500;line-height:1.4;font-family:'Noto Sans JP',sans-serif;}
@@ -176,10 +178,10 @@ html.nav-open{overflow:hidden;}
 .timeline .track{display:flex;flex-direction:column;align-items:center;width:24px;flex-shrink:0;}
 .timeline .dot-outer{width:18px;height:18px;flex-shrink:0;display:block;}
 .timeline{position:relative;}
-.timeline .deco-left{position:absolute;left:-100px;top:400px;width:180px;height:160px;pointer-events:none;z-index:0;}
-.timeline .deco-left svg{display:block;width:100%;height:100%;}
-.timeline .deco-right{position:absolute;left:230px;top:800px;width:160px;height:150px;pointer-events:none;z-index:0;}
-.timeline .deco-right svg{display:block;width:100%;height:100%;}
+.timeline .deco-left{position:absolute;left:-73px;top:37px;width:331px;height:295px;pointer-events:none;z-index:0;}
+.timeline .deco-left img{display:block;width:100%;height:100%;}
+.timeline .deco-right{position:absolute;left:215px;top:394px;width:303px;height:284px;pointer-events:none;z-index:0;}
+.timeline .deco-right img{display:block;width:100%;height:100%;}
 .timeline .head,.timeline .nodes{position:relative;z-index:1;}
 .timeline .trace{flex:1;width:1.5px;background:#e0dcd5;margin-top:4px;}
 .timeline .content{flex:1;padding-bottom:40px;}
@@ -228,10 +230,10 @@ html.nav-open{overflow:hidden;}
 .linecta .brand-row .logo-img{height:20px;width:auto;}
 .linecta .badge-outline{border:1px solid #fff;border-radius:999px;padding:4px 10px;font-size:10px;font-weight:500;font-family:'Noto Sans JP',sans-serif;}
 .linecta .body{position:relative;overflow:hidden;}
-.linecta .deco-cream{position:absolute;left:-162px;top:128.346px;width:392px;height:398.6px;pointer-events:none;z-index:0;}
-.linecta .deco-cream svg{display:block;width:100%;height:100%;}
-.linecta .deco-pink{position:absolute;left:209px;top:-160px;width:180px;height:180px;pointer-events:none;z-index:0;}
-.linecta .deco-pink svg{display:block;width:100%;height:100%;}
+.linecta .deco-cream{position:absolute;left:-114px;top:216.67px;width:463.25px;height:471.05px;pointer-events:none;z-index:0;}
+.linecta .deco-cream img{display:block;width:100%;height:100%;}
+.linecta .deco-pink{position:absolute;left:290px;top:-80px;width:180px;height:180px;pointer-events:none;z-index:0;}
+.linecta .deco-pink img{display:block;width:100%;height:100%;}
 .linecta .eyebrow,.linecta .headline,.linecta .desc,.linecta .line-btn,.linecta .disclaimer,.linecta .tagline{position:relative;z-index:1;}
 .linecta .line-btn img{display:block;}
 .linecta .tagline .brand-dark{height:44px;width:auto;margin:0 auto;}
@@ -295,10 +297,12 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 [data-reveal] .rv-deco{opacity:0;transform:translateY(20px);transition:opacity .95s cubic-bezier(0.4,0,0.2,1),transform .95s cubic-bezier(0.4,0,0.2,1);transition-delay:.22s;}
 [data-reveal].is-revealed .rv{opacity:1;transform:translateY(0);}
 [data-reveal].is-revealed .rv-deco{opacity:1;transform:translateY(0);}
-.hiw .organic.o1.rv-deco{transform:translateY(20px) rotate(-9.19deg);}
-.hiw .organic.o2.rv-deco{transform:translateY(20px) rotate(21.34deg);}
-.hiw[data-reveal].is-revealed .organic.o1.rv-deco{transform:translateY(0) rotate(-9.19deg);}
-.hiw[data-reveal].is-revealed .organic.o2.rv-deco{transform:translateY(0) rotate(21.34deg);}
+.hiw .organic.o1.rv-deco{transform:translateY(20px) rotate(-9.19deg) skewX(2.79deg);}
+.hiw .organic.o2.rv-deco{transform:translateY(20px) rotate(46.34deg) skewX(-7.61deg) scaleY(.99);}
+.hiw[data-reveal].is-revealed .organic.o1.rv-deco{transform:translateY(0) rotate(-9.19deg) skewX(2.79deg);}
+.hiw[data-reveal].is-revealed .organic.o2.rv-deco{transform:translateY(0) rotate(46.34deg) skewX(-7.61deg) scaleY(.99);}
+.about .b1.rv-deco{transform:translateY(20px) rotate(21.67deg);}
+.about[data-reveal].is-revealed .b1.rv-deco{transform:translateY(0) rotate(21.67deg);}
 .emo .blob-big.rv-deco,.emo .blob-dot.rv-deco,.emo .dot2.rv-deco,.emo .corner.rv-deco{transform:translateY(20px) rotate(-48.13deg);}
 .emo[data-reveal].is-revealed .blob-big.rv-deco,
 .emo[data-reveal].is-revealed .blob-dot.rv-deco,
@@ -308,17 +312,20 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 .pers[data-reveal].is-revealed .b1.rv-deco{opacity:.4;}
 .cs[data-reveal].is-revealed .b1.rv-deco{opacity:.35;}
 .cta[data-reveal].is-revealed .b1.rv-deco{opacity:.4;}
+.pf[data-reveal].is-revealed .b1.rv-deco{opacity:.35;}
 .cta[data-reveal].is-revealed .b.rv{opacity:.6;}
 .linecta[data-reveal].is-revealed .disclaimer.rv{opacity:.8;}
 @media (prefers-reduced-motion:reduce){
 [data-reveal] .rv,[data-reveal] .rv-deco{transition:none;opacity:1;transform:translateY(0);}
-.hiw .organic.o1.rv-deco{transform:translateY(0) rotate(-9.19deg);}
-.hiw .organic.o2.rv-deco{transform:translateY(0) rotate(21.34deg);}
+.hiw .organic.o1.rv-deco{transform:translateY(0) rotate(-9.19deg) skewX(2.79deg);}
+.hiw .organic.o2.rv-deco{transform:translateY(0) rotate(46.34deg) skewX(-7.61deg) scaleY(.99);}
+.about .b1.rv-deco{transform:translateY(0) rotate(21.67deg);}
 .emo .blob-big.rv-deco,.emo .blob-dot.rv-deco,.emo .dot2.rv-deco,.emo .corner.rv-deco{transform:translateY(0) rotate(-48.13deg);}
 .dl .b1.rv-deco,.dl .b2.rv-deco{opacity:.35;}
 .pers .b1.rv-deco{opacity:.4;}
 .cs .b1.rv-deco{opacity:.35;}
 .cta .b1.rv-deco{opacity:.4;}
+.pf .b1.rv-deco{opacity:.35;}
 .cta .b.rv{opacity:.6;}
 .linecta .disclaimer.rv{opacity:.8;}
 }
@@ -358,8 +365,8 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </div>
 
 <section class="hiw" id="how-it-works" data-reveal>
-  <span class="organic o1 rv-deco"><svg width="348" height="300" viewBox="0 0 348 300" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.68" d="M213.065 2.59254C226.757 -0.561664 241.4 -0.538128 255.426 1.06831C312.621 7.61904 354.635 52.6107 346.307 103.243C341.266 133.89 313.875 157.222 300.617 185.052C290.465 206.363 288.423 229.622 275.14 250.167C267.18 262.38 256.331 272.965 243.315 281.22C218.754 296.959 188.741 302.462 158.81 298.402C140.744 296.668 117.834 288.346 102.61 280.001C67.2158 260.656 42.2427 230.621 23.7214 198.507C2.76241 162.168 -12.2593 118.775 13.9664 81.2198C32.6908 54.4064 63.7768 51.3236 95.5393 44.2274C102.773 42.6411 109.889 40.6695 116.848 38.3238C150.256 27.1544 177.475 9.71626 213.065 2.59254Z" fill="#E3E3E3"/></svg></span>
-  <span class="organic o2 rv-deco"><svg width="331" height="258" viewBox="0 0 331 258" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.43" d="M303.341 103.661C312.364 111.797 318.908 122.02 323.728 132.523C343.382 175.352 321.076 224.827 271.041 241.721C240.756 251.946 207.139 243.302 175.745 246.533C151.705 249.008 129.521 258.012 104.778 257.96C90.0409 257.884 75.4965 255.063 62.1123 249.686C36.7077 239.612 18.2183 221.146 8.51084 198.45C1.99622 185.072 -0.665511 165.363 0.139415 151.003C1.96085 117.643 18.229 86.7585 39.2911 59.442C63.1243 28.5308 96.0704 -1.40235 142.171 0.0508763C175.086 1.08829 191.843 21.3874 212.573 40.359C217.268 44.6932 222.261 48.7724 227.526 52.5738C252.719 70.867 280.869 82.0323 303.341 103.661Z" fill="#FFF9DA"/></svg></span>
+  <span class="organic o1 rv-deco"><img src="assets/svg/how-it-works-blob-01.png" alt="" width="702" height="580" loading="lazy"></span>
+  <span class="organic o2 rv-deco"><img src="assets/svg/how-it-works-blob-02.png" alt="" width="608" height="570" loading="lazy"></span>
   <div class="center-badge rv">
     <p class="sec-h hiw-cue"><span class="hc" style="--i:0">ち</span><span class="hc" style="--i:1">ょ</span><span class="hc" style="--i:2">っ</span><span class="hc" style="--i:3">と</span><span class="hc" style="--i:4">、</span><span class="hc hc-em" style="--i:5">触</span><span class="hc hc-em" style="--i:6">っ</span><span class="hc hc-em" style="--i:7">て</span><span class="hc hc-em" style="--i:8">み</span><span class="hc hc-em" style="--i:9">る</span><span class="hc hc-em" style="--i:10">？</span></p>
   </div>
@@ -393,10 +400,10 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="emo" data-reveal>
-  <span class="blob-big rv-deco"><svg width="555" height="410" viewBox="0 0 555 410" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.39" d="M405.081 0.0742259C426.83 -0.908861 451.199 7.96218 468.213 21.4108C495.39 42.8959 510.046 78.7928 504.618 113.052C501.477 132.887 492.795 144.881 501.027 166.353C505.003 177.819 514.283 185.103 522.074 193.809C562.968 239.51 566.958 310.651 526.695 358.126C503.304 385.701 475.491 405.235 438.948 408.841C400.925 412.898 363.058 399.888 335.553 373.318C327.389 365.301 319.531 353.533 311.679 347.136C297.392 335.397 277.967 332.076 260.592 338.403C258.284 339.226 255.935 340.237 253.735 341.315C235.746 350.139 216.143 357.087 196.113 359.183C194.259 359.594 186.501 360.241 184.409 360.374C138.326 363.228 93.0034 347.623 58.4454 317.006C23.8941 286.588 2.97074 243.594 0.352658 197.636C-2.62222 151.304 13.3202 105.746 44.5351 71.3779C91.7422 18.5664 166.348 -0.181505 232.912 24.0403C240.258 26.7049 247.413 29.871 254.325 33.5163C271.607 42.8238 281.66 51.2749 303.02 48.3271C324.359 45.3816 330.332 34.5786 345.175 22.0585C362.231 7.67085 383.041 1.2936 405.081 0.0742259Z" fill="#D4CCAC"/></svg></span>
-  <span class="blob-dot rv-deco"><svg width="109" height="102" viewBox="0 0 109 102" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.38" d="M47.5487 0.403523C77.4548 -3.11532 104.712 16.7729 108.295 44.7101C111.877 72.6622 90.4133 97.9896 60.4627 101.163C30.7758 104.307 3.94095 84.4806 0.390071 56.7658C-3.15922 29.0658 17.9062 3.89123 47.5487 0.403523Z" fill="#6A514C"/></svg></span>
-  <span class="dot2 rv-deco"><svg width="86" height="86" viewBox="0 0 86 86" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M37.4958 0.326583C60.9912 -2.57476 82.3705 14.1795 85.165 37.6877C87.9596 61.1959 71.1067 82.496 47.5876 85.1857C24.2156 87.8579 3.08299 71.1378 0.302636 47.779C-2.47297 24.4198 14.1522 3.20942 37.4958 0.326583Z" fill="#FFF5E3"/></svg></span>
-  <span class="corner rv-deco"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.3267 15.8043C14.9894 0.667412 34.5451 -4.48773 49.1329 4.257C63.7207 13.0017 67.8826 32.3744 58.4562 47.653C48.9209 63.1077 29.1242 68.4945 14.3685 59.6488C-0.387529 50.8035 -4.44746 31.1158 5.3267 15.8043Z" fill="#FCECDB"/></svg></span>
+  <span class="blob-big rv-deco"><img src="assets/svg/emo-blob-main.png" alt="" width="1110" height="820" loading="lazy"></span>
+  <span class="blob-dot rv-deco"><img src="assets/svg/emo-blob-small.png" alt="" width="218" height="203" loading="lazy"></span>
+  <span class="dot2 rv-deco"><img src="assets/svg/emo-blob-circle.png" alt="" width="171" height="171" loading="lazy"></span>
+  <span class="corner rv-deco"><img src="assets/svg/emo-accent-dot.png" alt="" width="64" height="124" loading="lazy"></span>
   <p class="h rv">言葉は話さない。<br>でも、触れると返してくれる。</p>
   <p class="b rv rv-d1">たくさん話しかけたり、何かを教えたりはしません。
 
@@ -443,6 +450,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="pf" id="product" data-reveal>
+  <div class="blob b1 rv-deco"></div>
   <div class="title rv">
     <p class="eng">PRODUCT FEATURES</p>
     <p class="sub">小さなからだに、やさしい仕掛け。</p>
@@ -476,8 +484,8 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="about" data-reveal>
-  <div class="blob b1 rv-deco"><svg width="180" height="179" viewBox="0 0 180 179" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.45" d="M74.5863 1.33678C123.268 -7.07973 169.669 25.1154 178.527 73.4575C187.385 121.8 155.386 168.201 106.848 177.401C57.7503 186.706 10.4334 154.439 1.47402 105.54C-7.48708 56.6412 25.3432 9.85058 74.5863 1.33678Z" fill="#FCDBDB"/></svg></div>
-  <div class="blob b2 rv-deco"><svg width="220" height="200" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.7" d="M96.5165 0.764239C156.995 -6.02521 212.027 33.1815 219.22 88.1932C226.414 143.205 183.033 193.049 122.494 199.344C62.3324 205.597 7.9358 166.47 0.779004 111.808C-6.36558 57.1449 36.4287 7.51039 96.5165 0.764239Z" fill="#FFF5E3"/></svg></div>
+  <div class="blob b1 rv-deco"><img src="assets/svg/about-blob-pink.png" alt="" width="451" height="554" loading="lazy"></div>
+  <div class="blob b2 rv-deco"><img src="assets/svg/about-blob-cream.png" alt="" width="668" height="608" loading="lazy"></div>
   <div class="about-header rv">
     <div class="eyebrow">
       <span class="label">ABOUT <span style="font-size:16px;text-transform:none;">「yadori.」</span></span>
@@ -497,8 +505,8 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="story">
-  <div class="blob b1"><svg width="180" height="160" viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.35" d="M74.5863 1.19489C123.268 -6.32825 169.669 22.4495 178.527 65.6603C187.385 108.871 155.386 150.347 106.848 158.571C57.7503 166.888 10.4334 138.046 1.47402 94.3376C-7.48708 50.629 25.3432 8.80499 74.5863 1.19489Z" fill="#FCDBDB"/></svg></div>
-  <div class="blob b2"><svg width="220" height="200" viewBox="0 0 220 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M96.5165 0.764239C156.995 -6.02521 212.027 33.1815 219.22 88.1932C226.414 143.205 183.033 193.049 122.493 199.344C62.3324 205.597 7.9358 166.47 0.779004 111.808C-6.36558 57.1449 36.4287 7.51039 96.5165 0.764239Z" fill="#FFF5E3"/></svg></div>
+  <div class="blob b1"><img src="assets/svg/story-blob-pink.png" alt="" width="370" height="432" loading="lazy"></div>
+  <div class="blob b2"><img src="assets/svg/story-blob-cream.png" alt="" width="576" height="524" loading="lazy"></div>
   <div class="story-header">
     <div class="eyebrow">
       <span class="label">Our Story</span>
@@ -517,8 +525,8 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
 </section>
 
 <section class="timeline">
-  <span class="deco-left"><svg width="180" height="160" viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.5" d="M78.968 0.611391C128.451 -4.82017 173.476 26.5452 179.362 70.5546C185.247 114.564 149.754 154.44 100.222 159.475C50.9992 164.477 6.49293 133.176 0.637367 89.4464C-5.2082 45.7159 29.8053 6.00831 78.968 0.611391Z" fill="#FFF5E3"/></svg></span>
-  <span class="deco-right"><svg width="160" height="150" viewBox="0 0 160 150" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.4" d="M66.2989 1.12021C109.571 -5.93274 150.817 21.0464 158.691 61.5566C166.565 102.067 138.121 140.951 94.9762 148.66C51.3336 156.458 9.27416 129.418 1.31024 88.4415C-6.65518 47.4647 22.5273 8.25468 66.2989 1.12021Z" fill="#FCDBDB"/></svg></span>
+  <span class="deco-left"><img src="assets/svg/timeline-blob-left.png" alt="" width="662" height="590" loading="lazy"></span>
+  <span class="deco-right"><img src="assets/svg/timeline-blob-right.png" alt="" width="606" height="568" loading="lazy"></span>
   <div class="head">
     <div class="eyebrow">
       <span class="label">Development</span>
@@ -593,8 +601,8 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
     </div>
   </div>
   <div class="body">
-    <span class="deco-cream rv-deco"><svg width="314" height="293" viewBox="0 0 314 293" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M85.0265 19.5054C91.622 9.77878 104.145 2.78285 116.622 0.736773C136.554 -2.53018 159.816 5.21984 175.678 20.9559C184.861 30.0655 188.199 38.4878 201.939 43.3533C209.139 46.1317 215.918 44.9955 222.943 45.0557C259.818 45.3718 297.738 71.4931 309.027 107.362C315.582 128.199 316.555 147.788 306.479 164.895C296.152 182.814 277.092 193.989 254.435 195.407C247.643 195.777 239.02 194.548 233.164 195.417C222.457 196.961 214.405 204.005 211.988 213.944C211.659 215.257 211.412 216.661 211.249 218.028C209.916 229.208 207.091 240.346 201.631 249.77C201.237 250.727 199.037 254.312 198.422 255.263C184.844 276.173 162.014 289.535 134.971 292.399C108.033 295.338 79.0724 287.504 54.5625 270.646C29.7437 253.796 11.5003 229.123 4.00316 202.268C-7.76535 161.328 6.94482 121.948 41.1463 102.833C44.9163 100.721 48.8819 98.8866 53.015 97.344C63.4488 93.5623 71.081 92.5509 76.5381 82.2229C81.9894 71.905 78.3794 65.1124 76.7816 53.8384C74.9454 40.8828 78.4578 29.4491 85.0265 19.5054Z" fill="#FFEBC6"/></svg></span>
-    <span class="deco-pink rv-deco"><svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M74.5863 1.34425C123.268 -7.11928 169.669 25.2557 178.527 73.8679C187.385 122.48 155.386 169.141 106.848 178.392C57.7503 187.749 10.4334 155.302 1.47402 106.13C-7.48708 56.9577 25.3432 9.90561 74.5863 1.34425Z" fill="#FCDBDB"/></svg></span>
+    <span class="deco-cream rv-deco"><img src="assets/svg/line-cta-blob-cream.png" alt="" width="708" height="626" loading="lazy"></span>
+    <span class="deco-pink rv-deco"><img src="assets/svg/line-cta-blob-pink.png" alt="" width="360" height="360" loading="lazy"></span>
     <div class="eyebrow rv rv-d1">
       <span class="label">Line Registration</span>
       <svg class="line" style="width:28px" width="28" height="2" viewBox="0 0 28 2" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="0.75" x2="28" y2="0.75" stroke="#7E9075" stroke-width="1.5"/></svg>
