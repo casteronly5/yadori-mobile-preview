@@ -3,12 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}if(!location.hash){window.scrollTo(0,0);}window.addEventListener('pageshow',function(){if(!location.hash){window.scrollTo(0,0);}});</script>
+<script>(function(){
+if('scrollRestoration' in history){history.scrollRestoration='manual';}
+function toTop(){if(!location.hash){window.scrollTo({top:0,left:0,behavior:'instant'});}}
+toTop();
+document.addEventListener('DOMContentLoaded',toTop);
+window.addEventListener('load',toTop);
+window.addEventListener('pageshow',toTop);
+setTimeout(toTop,0);
+setTimeout(toTop,150);
+setTimeout(toTop,500);
+})();</script>
 <title>YADORI 预览</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Gothic+A1:wght@400;500;600;700&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0;}
+*{box-sizing:border-box;margin:0;padding:0;overflow-anchor:none;}
 html{background:#e5e1d8;scroll-behavior:smooth;}
 @media (prefers-reduced-motion:reduce){
 html{scroll-behavior:auto;}
