@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}if(!location.hash){window.scrollTo(0,0);}</script>
+<script>if('scrollRestoration' in history){history.scrollRestoration='manual';}if(!location.hash){window.scrollTo(0,0);}window.addEventListener('pageshow',function(){if(!location.hash){window.scrollTo(0,0);}});</script>
 <title>YADORI 预览</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Gothic+A1:wght@400;500;600;700&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -70,7 +70,8 @@ html.nav-open{overflow:hidden;}
 .pc{display:flex;flex-direction:column;gap:40px;padding:40px 24px 64px;}
 .pc .media{position:relative;display:flex;justify-content:center;align-items:center;}
 .pc .content{position:relative;display:flex;flex-direction:column;gap:24px;}
-.pc .media .img{width:100%;height:342px;border-radius:65px;overflow:hidden;box-shadow:0 12px 24px rgba(49,37,30,.1);}
+.pc .media .img{width:100%;aspect-ratio:1/1;height:auto;border-radius:65px;overflow:hidden;box-shadow:0 12px 24px rgba(49,37,30,.1);position:relative;}
+.pc .media .img img{position:absolute;left:-0.12%;top:-8.71%;width:100%;height:150%;max-width:none;object-fit:cover;}
 .pc .media img{width:100%;height:100%;object-fit:cover;}
 .pc .content .h{font-size:24px;font-weight:600;text-align:center;font-family:'Noto Sans JP',sans-serif;}
 .pc .content .b{font-size:14px;line-height:1.8;color:#635f5b;white-space:pre-line;text-align:center;font-family:'Noto Sans JP',sans-serif;}
@@ -106,7 +107,7 @@ html.nav-open{overflow:hidden;}
 .dl{padding:64px 24px;display:flex;flex-direction:column;gap:48px;}
 .dl .center-badge{position:relative;z-index:1;}
 .dl .moments{display:flex;flex-direction:column;gap:40px;position:relative;z-index:1;}
-.dl .ph{height:220px;border-radius:16px;}
+.dl .ph{aspect-ratio:342/220;height:auto;border-radius:16px;}
 .dl .t{font-size:16px;font-weight:600;margin-top:12px;font-family:'Noto Sans JP',sans-serif;}
 .dl .b{font-size:13px;line-height:1.6;color:#635f5b;margin-top:6px;font-family:'Noto Sans JP',sans-serif;}
 .dl .b1{left:180px;top:320px;width:260px;height:260px;border-radius:130px;background:#efe2df;opacity:.35;}
@@ -133,7 +134,7 @@ html.nav-open{overflow:hidden;}
 .pf .title .sub{color:#7e9075;font-size:16px;font-weight:500;line-height:1.6;margin-top:6px;font-family:'Noto Sans JP',sans-serif;}
 .pf .block{display:flex;flex-direction:column;gap:12px;}
 .pf .block h4{font-size:16px;font-weight:600;font-family:'Gothic A1',sans-serif;}
-.pf .size-img{height:220px;border-radius:20px;overflow:hidden;}
+.pf .size-img{aspect-ratio:342/220;height:auto;border-radius:20px;overflow:hidden;}
 .pf .size-img img{width:100%;height:100%;object-fit:cover;}
 .pf .size-cap{font-size:13px;color:#635f5b;text-align:center;line-height:1.6;font-family:'Noto Sans JP',sans-serif;}
 .pf .spec{border:1px solid #ebe6e0;border-radius:16px;overflow:hidden;background:#fff;}
@@ -153,7 +154,8 @@ html.nav-open{overflow:hidden;}
 .about .about-header{display:flex;flex-direction:column;gap:16px;align-items:center;position:relative;z-index:1;}
 .about .headline{font-size:15px;font-weight:500;font-family:'Noto Sans JP',sans-serif;}
 .about .prose{font-size:14px;line-height:2;color:#635f5b;white-space:pre-line;position:relative;z-index:1;font-family:'Noto Sans JP',sans-serif;}
-.about .frame{height:240px;border-radius:24px;overflow:hidden;border:1px solid #ebe6e0;box-shadow:0 8px 20px rgba(49,37,30,.05);position:relative;z-index:1;}
+.about .frame{aspect-ratio:326/240;height:auto;border-radius:24px;overflow:hidden;border:1px solid #ebe6e0;box-shadow:0 8px 20px rgba(49,37,30,.05);position:relative;z-index:1;}
+.about .frame img{width:100%;height:100%;object-fit:cover;}
 .about img{width:100%;height:100%;object-fit:cover;}
 .about .b1{left:-91.36px;top:38.55px;width:256.59px;height:276.584px;transform:rotate(21.67deg);}
 .about .b2{right:-152px;bottom:207px;width:334px;height:304px;}
@@ -165,7 +167,7 @@ html.nav-open{overflow:hidden;}
 .story .prose{display:flex;flex-direction:column;gap:28px;position:relative;z-index:1;}
 .story .prose p{font-size:14px;line-height:2;color:#635f5b;font-family:'Noto Sans JP',sans-serif;}
 .story .card{background:#faf8f4;border:1px solid #ebe6e0;border-radius:24px;padding:16px;box-shadow:0 8px 8px rgba(49,37,30,.03);position:relative;z-index:1;}
-.story .card .img{height:200px;border-radius:16px;overflow:hidden;}
+.story .card .img{aspect-ratio:310/200;height:auto;border-radius:16px;overflow:hidden;}
 .story .card img{width:100%;height:100%;object-fit:cover;}
 .story .b1{left:-185px;top:-140px;width:370px;height:356px;}
 .story .b2{right:-108px;bottom:120px;width:288px;height:262px;}
@@ -178,6 +180,7 @@ html.nav-open{overflow:hidden;}
 .timeline .node{display:flex;gap:16px;}
 .timeline .track{display:flex;flex-direction:column;align-items:center;width:24px;flex-shrink:0;}
 .timeline .dot-outer{width:18px;height:18px;flex-shrink:0;display:block;}
+.timeline .dot-outer svg{display:block;width:100%;height:100%;}
 .timeline{position:relative;}
 .timeline .deco-left{position:absolute;left:-73px;top:37px;width:331px;height:295px;pointer-events:none;z-index:0;}
 .timeline .deco-left img{display:block;width:100%;height:100%;}
@@ -186,10 +189,10 @@ html.nav-open{overflow:hidden;}
 .timeline .head,.timeline .nodes{position:relative;z-index:1;}
 .timeline .trace{flex:1;width:1.5px;background:#e0dcd5;margin-top:4px;}
 .timeline .content{flex:1;padding-bottom:40px;}
-.timeline .meta{font-family:'Cormorant Garamond',Georgia,serif;font-size:14px;color:#7e9075;font-weight:600;}
+.timeline .meta{font-family:'Noto Sans JP',sans-serif;font-size:14px;color:#7e9075;font-weight:600;}
 .timeline .title{font-size:16px;font-weight:500;line-height:1.4;margin-top:16px;font-family:'Noto Sans JP',sans-serif;}
 .timeline .desc{font-size:13px;color:#635f5b;line-height:1.6;margin-top:8px;font-family:'Noto Sans JP',sans-serif;}
-.timeline .img{margin-top:16px;height:180px;border-radius:16px;overflow:hidden;border:1px solid #ebe6e0;}
+.timeline .img{margin-top:16px;aspect-ratio:302/180;height:auto;border-radius:16px;overflow:hidden;border:1px solid #ebe6e0;}
 .timeline .img img{width:100%;height:100%;object-fit:cover;}
 .timeline .note{font-size:10px;color:rgba(99,95,91,.7);margin-top:12px;line-height:1.5;font-family:'Noto Sans JP',sans-serif;}
 .story{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(0.4,0,0.2,1),transform .7s cubic-bezier(0.4,0,0.2,1);}
@@ -538,7 +541,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   </div>
   <div class="nodes">
     <div class="node">
-      <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""><div class="trace"></div></div>
+      <div class="track"><span class="dot-outer" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="8" fill="#fff" stroke="#7e9075" stroke-width="1.5"/><circle cx="9" cy="9" r="4" fill="#7e9075"/></svg></span><div class="trace"></div></div>
       <div class="content">
         <p class="meta serif">2026.02 — IDEA</p>
         <p class="title">小さな発見から</p>
@@ -547,7 +550,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
       </div>
     </div>
     <div class="node">
-      <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""><div class="trace"></div></div>
+      <div class="track"><span class="dot-outer" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="8" fill="#fff" stroke="#7e9075" stroke-width="1.5"/><circle cx="9" cy="9" r="4" fill="#7e9075"/></svg></span><div class="trace"></div></div>
       <div class="content">
         <p class="meta serif">03-05 — DESIGN</p>
         <p class="title">動きと抱き心地を考える</p>
@@ -556,7 +559,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
       </div>
     </div>
     <div class="node">
-      <div class="track"><img class="dot-outer" src="https://www.figma.com/api/mcp/asset/36d5c23b-4319-4097-9471-1e954ff3bac4.svg" alt=""></div>
+      <div class="track"><span class="dot-outer" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="8" fill="#fff" stroke="#7e9075" stroke-width="1.5"/><circle cx="9" cy="9" r="4" fill="#7e9075"/></svg></span></div>
       <div class="content">
         <p class="meta serif">06-08 — PROTOTYPE &amp; TESTING</p>
         <p class="title">試作を重ねて、あなたのそばへ</p>
@@ -627,7 +630,7 @@ footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
   </div>
   <div class="bottom">
     <div class="sns"><a href="https://www.instagram.com/xiaopa_jp/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://note.com/yadori_jp" target="_blank" rel="noopener noreferrer">Notes</a></div>
-    <p class="copy">© 2026 yadori Inc. All rights reserved.</p>
+    <p class="copy">@2026 Polaris One Co., Ltd. All rights reserved.</p>
   </div>
 </footer>
 
