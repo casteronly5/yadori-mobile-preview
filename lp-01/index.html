@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>(function(){
+if('scrollRestoration' in history){history.scrollRestoration='manual';}
+if(location.hash){try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}}
+function toTop(){window.scrollTo({top:0,left:0,behavior:'instant'});}
+toTop();
+document.addEventListener('DOMContentLoaded',toTop);
+window.addEventListener('load',toTop);
+window.addEventListener('pageshow',toTop);
+setTimeout(toTop,0);
+setTimeout(toTop,150);
+setTimeout(toTop,500);
+})();</script>
+<title>YADORI 预览</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Gothic+A1:wght@400;500;600;700&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;overflow-anchor:none;}
+html{background:#e5e1d8;scroll-behavior:smooth;}
+@media (prefers-reduced-motion:reduce){
+html{scroll-behavior:auto;}
+}
+body{font-family:'Gothic A1',-apple-system,"Hiragino Sans",sans-serif;background:#fbf9f5;color:#2a2826;max-width:430px;margin:0 auto;position:relative;overflow-x:hidden;}
+img{display:block;}
+.serif{font-family:'Cormorant Garamond',Georgia,serif;}
+.jp{font-family:'Noto Sans JP','Hiragino Sans',sans-serif;}
+.btn{display:inline-block;border:none;border-radius:999px;padding:14px 32px;font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;}
+.ph{background:#d4e0d1;display:flex;align-items:center;justify-content:center;color:#7e9075;font-size:12px;overflow:hidden;position:relative;}
+.ph img{width:100%;height:100%;object-fit:cover;}
+.ph video{width:100%;height:100%;object-fit:cover;display:block;}
+.sec-h{font-family:'Noto Sans JP',sans-serif;font-weight:600;font-size:24px;}
+.sec-h.sm{font-size:20px;}
+.hiw .center-badge .sec-h{font-family:'Mochiy Pop One',cursive;font-weight:400;font-size:25px;color:rgba(30,34,31,.6);}
+section{position:relative;overflow:hidden;padding:48px 24px;}
+.hero{position:relative;overflow:hidden;height:100vh;height:100svh;min-height:560px;max-height:860px;display:flex;flex-direction:column;justify-content:space-between;padding:24px 24px 32px;color:#efece8;}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;z-index:0;}
+.hero-overlay{position:absolute;inset:0;background:rgba(30,34,31,0.6);z-index:0;}
+.hero>*:not(video):not(.hero-overlay){position:relative;z-index:1;}
+.hero nav{position:relative;display:flex;justify-content:space-between;align-items:center;}
+.hero .menu-icon{width:24px;height:24px;display:block;}
+.hero .menu-btn{width:24px;height:24px;border:0;margin:0;padding:0;background:transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;position:relative;z-index:1;}
+.hero .menu-btn:focus-visible{outline:2px solid #efece8;outline-offset:4px;}
+.hero .menu-icon .l1,.hero .menu-icon .l3{transform-box:fill-box;transform-origin:center;transition:transform .4s cubic-bezier(0.4,0,0.2,1);}
+.hero .menu-icon .l2{transform-box:fill-box;transform-origin:center;transition:opacity .3s ease;}
+.hero .menu-btn.is-open .menu-icon .l1{transform:translateY(7.0008px) rotate(45deg);}
+.hero .menu-btn.is-open .menu-icon .l3{transform:translateY(-7.0008px) rotate(-45deg);}
+.hero .menu-btn.is-open .menu-icon .l2{opacity:0;}
+html.nav-open{overflow:hidden;}
+.nav-overlay{position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;background:rgba(251,249,245,0.94);opacity:0;visibility:hidden;transition:opacity .38s cubic-bezier(0.4,0,0.2,1),visibility 0s linear .38s;}
+.nav-overlay.is-open{opacity:1;visibility:visible;transition:opacity .38s cubic-bezier(0.4,0,0.2,1),visibility 0s linear 0s;}
+.nav-panel{display:flex;flex-direction:column;align-items:center;gap:28px;transform:translateY(-10px);transition:transform .38s cubic-bezier(0.4,0,0.2,1);}
+.nav-overlay.is-open .nav-panel{transform:translateY(0);}
+.nav-panel a{font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:500;color:#2a2826;text-decoration:none;letter-spacing:.02em;}
+.nav-panel a:focus-visible{outline:2px solid #7e9075;outline-offset:4px;}
+@media (prefers-reduced-motion:reduce){
+.hero .menu-icon .l1,.hero .menu-icon .l3,.hero .menu-icon .l2,.nav-overlay,.nav-panel{transition:none;}
+}
+.hero .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:32px;width:auto;}
+.hero .core{text-align:center;display:flex;flex-direction:column;gap:24px;align-items:center;}
+.hero .headline{font-weight:600;font-size:28px;line-height:1.5;font-family:'Noto Sans JP',sans-serif;}
+.hero .sub{font-size:13px;opacity:.8;line-height:1.6;font-family:'Noto Sans JP',sans-serif;}
+.hero .bottom{display:flex;flex-direction:column;align-items:center;gap:16px;}
+.hero .btn{background:rgba(36,242,120,.21);color:#efece8;width:100%;text-align:center;}
+.hero .disclaimer{font-size:11px;opacity:.5;line-height:1.4;text-align:center;font-family:'Noto Sans JP',sans-serif;margin-top:4px;}
+.float-cta{display:flex;align-items:center;justify-content:center;gap:10px;position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(12px);width:calc(100% - 48px);max-width:382px;z-index:45;background:rgba(37,150,83,.54);color:#fff;border:none;border-radius:999px;padding:14px 24px;font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;box-shadow:0 8px 16px rgba(6,199,85,.15);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s cubic-bezier(0.4,0,0.2,1),transform .3s cubic-bezier(0.4,0,0.2,1),visibility 0s linear .3s;}
+.float-cta svg{flex:none;}
+.float-cta.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);transition:opacity .3s cubic-bezier(0.4,0,0.2,1),transform .3s cubic-bezier(0.4,0,0.2,1),visibility 0s linear 0s;}
+@media (prefers-reduced-motion:reduce){
+.float-cta{transition:opacity .01s linear;transform:translateX(-50%);}
+.float-cta.is-visible{transition:opacity .01s linear;transform:translateX(-50%);}
+}
+.blob{position:absolute;pointer-events:none;}
+.center-badge{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;position:relative;}
+.eyebrow{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.eyebrow .label{font-family:'Cormorant Garamond',Georgia,serif;font-size:12px;font-weight:600;color:#7e9075;letter-spacing:.05em;text-transform:uppercase;}
+.eyebrow img.line{height:auto;display:block;}
+.pc{display:flex;flex-direction:column;gap:40px;padding:40px 24px 64px;}
+.pc .media{position:relative;display:flex;justify-content:center;align-items:center;}
+.pc .content{position:relative;display:flex;flex-direction:column;gap:24px;}
+.pc .media .img{width:100%;aspect-ratio:1/1;height:auto;border-radius:65px;overflow:hidden;box-shadow:0 12px 24px rgba(49,37,30,.1);position:relative;}
+.pc .media img{width:100%;height:100%;object-fit:cover;}
+.pc .content .h{font-size:24px;font-weight:600;text-align:center;font-family:'Noto Sans JP',sans-serif;}
+.pc .content .b{font-size:14px;line-height:1.8;color:#635f5b;white-space:pre-line;text-align:center;font-family:'Noto Sans JP',sans-serif;}
+.pc .content .tag{display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;color:#7e9075;}
+.pc .content .tag img.line{width:32px;height:auto;display:block;}
+.hiw{padding:64px 24px;display:flex;flex-direction:column;gap:48px;}
+.hiw{position:relative;overflow:hidden;}
+.hiw .organic{position:absolute;z-index:0;pointer-events:none;display:block;}
+.hiw .organic.o1{left:27.82px;top:71.8px;width:351.291px;height:289.886px;transform:rotate(-9.19deg) skewX(2.79deg);}
+.hiw .organic.o1 img{display:block;width:100%;height:100%;}
+.hiw .organic.o2{left:32.8px;top:96.22px;width:299.544px;height:287.366px;transform:rotate(46.34deg) skewX(-7.61deg) scaleY(.99);}
+.hiw .organic.o2 img{display:block;width:100%;height:100%;}
+.hiw .center-badge,.hiw .steps{position:relative;z-index:1;}
+.hiw .steps{display:flex;flex-direction:column;gap:48px;}
+.hiw .step{display:flex;flex-direction:column;gap:16px;}
+.hiw .step .ph{height:210px;border-radius:16px;background:transparent;}
+.hiw .step .ph img{object-fit:contain;}
+.hiw .t{font-size:16px;font-weight:400;color:#7e9075;text-align:center;font-family:'Mochiy Pop One',cursive;}
+.hiw .b{font-size:16px;line-height:1.5;color:#635f5b;text-align:center;font-family:'Mochiy Pop One',cursive;}
+.emo{background:#efe2df;text-align:center;padding:64px 24px;}
+.emo{position:relative;overflow:hidden;}
+.emo .blob-big{position:absolute;left:-145.4px;top:103.78px;width:555px;height:410px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
+.emo .blob-big img{display:block;width:100%;height:100%;}
+.emo .blob-dot{position:absolute;left:316.85px;top:293.75px;width:109px;height:102px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
+.emo .blob-dot img{display:block;width:100%;height:100%;}
+.emo .dot2{position:absolute;left:307px;top:-23px;width:86px;height:86px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
+.emo .dot2 img{display:block;width:100%;height:100%;}
+.emo .corner{position:absolute;left:-21.11px;top:-17.97px;width:32px;height:62px;transform:rotate(-48.13deg);pointer-events:none;z-index:0;}
+.emo .corner img{display:block;width:100%;height:100%;}
+.emo .h,.emo .b{position:relative;z-index:1;}
+.emo .h{font-size:24px;font-weight:600;font-family:'Noto Sans JP',sans-serif;}
+.emo .b{font-size:14px;line-height:1.7;color:#635f5b;margin-top:20px;white-space:pre-line;font-family:'Noto Sans JP',sans-serif;}
+.dl{padding:64px 24px;display:flex;flex-direction:column;gap:48px;}
+.dl .center-badge{position:relative;z-index:1;}
+.dl .moments{display:flex;flex-direction:column;gap:40px;position:relative;z-index:1;}
+.dl .ph{aspect-ratio:342/220;height:auto;border-radius:16px;}
+.dl .t{font-size:16px;font-weight:600;margin-top:12px;font-family:'Noto Sans JP',sans-serif;}
+.dl .b{font-size:13px;line-height:1.6;color:#635f5b;margin-top:6px;font-family:'Noto Sans JP',sans-serif;}
+.dl .b1{left:180px;top:320px;width:260px;height:260px;border-radius:130px;background:#efe2df;opacity:.35;}
+.dl .b2{left:-67px;top:759px;width:310px;height:324px;border-radius:155px/162px;background:rgba(218,202,143,0.68);opacity:.35;}
+.pers{background:#d4e0d1;display:flex;flex-direction:column;gap:32px;padding:48px 24px 64px;}
+.pers .ph{aspect-ratio:684/480;height:auto;border-radius:20px;position:relative;z-index:1;}
+.pers .content{position:relative;display:flex;flex-direction:column;gap:20px;z-index:1;text-align:center;}
+.pers .h{font-size:24px;font-weight:600;font-family:'Noto Sans JP',sans-serif;}
+.pers .b{font-size:14px;line-height:1.7;color:#635f5b;white-space:pre-line;font-family:'Noto Sans JP',sans-serif;}
+.pers .b1{left:-76px;top:154px;width:347px;height:343px;border-radius:150px;background:#f5efe0;opacity:.4;}
+.cs{padding:64px 24px;display:flex;flex-direction:column;gap:20px;}
+.cs .center-badge{position:relative;z-index:1;}
+.cs .note{font-size:13px;color:#635f5b;line-height:1.6;text-align:center;font-family:'Noto Sans JP',sans-serif;}
+.cs .cards{display:flex;flex-direction:column;gap:24px;position:relative;z-index:1;}
+.cs .card{border:1px solid #ebe6e0;border-radius:16px;padding:16px;background:#fbf9f5;}
+.cs .ph{aspect-ratio:620/392;height:auto;border-radius:12px;}
+.cs .card .name{font-size:16px;font-weight:700;margin-top:10px;text-align:center;}
+.cs .b1{left:-46px;top:35px;width:280px;height:280px;border-radius:140px;background:#7e9075;opacity:.35;}
+.pf{background:#fbf9f5;padding:40px 24px 64px;display:flex;flex-direction:column;gap:20px;}
+.pf .b1{left:121px;top:12px;width:319px;height:319px;border-radius:148px;background:#a4ebd3;opacity:.35;}
+.pf .title{text-align:center;}
+.pf .title .eng{font-size:24px;font-weight:600;letter-spacing:.04em;font-family:'Noto Sans JP',sans-serif;}
+.pf .title .sub{color:#2a2826;font-size:20px;font-weight:500;line-height:1.6;margin-top:6px;font-family:'Noto Sans JP',sans-serif;}
+.pf .block{display:flex;flex-direction:column;gap:12px;}
+.pf .block h4{font-size:16px;font-weight:600;font-family:'Gothic A1',sans-serif;}
+.pf .size-img{aspect-ratio:342/220;height:auto;border-radius:20px;overflow:hidden;}
+.pf .size-img img{width:100%;height:100%;object-fit:cover;}
+.pf .size-cap{font-size:13px;color:#635f5b;text-align:center;line-height:1.6;font-family:'Noto Sans JP',sans-serif;}
+.pf .spec{border:1px solid #ebe6e0;border-radius:16px;overflow:hidden;background:#fff;}
+.pf .spec .row{display:flex;justify-content:space-between;padding:12px 16px;font-size:12px;gap:12px;}
+.pf .spec .row+.row{border-top:1px solid #ebe6e0;}
+.pf .spec .k{font-weight:600;color:#635f5b;white-space:nowrap;font-family:'Noto Sans JP',sans-serif;}
+.pf .spec .v{color:#2a2826;text-align:right;font-family:'Noto Sans JP',sans-serif;}
+.pf .spec-note{font-size:10px;line-height:1.8;color:#635f5b;font-family:'Noto Sans JP',sans-serif;}
+.pf .gallery{display:flex;gap:8px;}
+.pf .gallery .g{flex:1;aspect-ratio:1;border-radius:12px;overflow:hidden;}
+.pf .gallery img{width:100%;height:100%;object-fit:cover;}
+.cta{background:rgba(36,242,120,.21);color:#2a2826;text-align:center;padding:80px 24px;}
+.cta .h{font-size:24px;font-weight:600;position:relative;font-family:'Noto Sans JP',sans-serif;}
+.cta .b{font-size:14px;opacity:.6;line-height:1.6;margin-top:16px;position:relative;font-family:'Noto Sans JP',sans-serif;}
+.cta .b1{left:-16px;top:-92px;width:320px;height:280px;border-radius:140px;background:#e0dcd5;opacity:.4;}
+.about{background:#fbf9f5;text-align:center;padding:72px 32px 80px;display:flex;flex-direction:column;gap:40px;}
+.about .about-header{display:flex;flex-direction:column;gap:16px;align-items:center;position:relative;z-index:1;}
+.about .headline{font-size:20px;font-weight:500;font-family:'Noto Sans JP',sans-serif;}
+.about .prose{font-size:14px;line-height:2;color:#635f5b;white-space:pre-line;position:relative;z-index:1;font-family:'Noto Sans JP',sans-serif;}
+.about .frame{aspect-ratio:326/240;height:auto;border-radius:24px;overflow:hidden;border:1px solid #ebe6e0;box-shadow:0 8px 20px rgba(49,37,30,.05);position:relative;z-index:1;}
+.about .frame img{width:100%;height:100%;object-fit:cover;}
+.about img{width:100%;height:100%;object-fit:cover;}
+.about .b1{left:-91.36px;top:38.55px;width:256.59px;height:276.584px;transform:rotate(21.67deg);}
+.about .b2{right:-152px;bottom:207px;width:334px;height:304px;}
+.about .b1 img,.about .b2 img{display:block;width:100%;height:100%;}
+.about .b1 svg,.about .b2 svg{display:block;width:100%;height:100%;}
+.story{background:#fbf9f5;text-align:center;padding:72px 24px 40px;display:flex;flex-direction:column;gap:48px;}
+.story .story-header{display:flex;flex-direction:column;gap:16px;align-items:center;position:relative;z-index:1;}
+.story .headline{font-size:20px;font-weight:500;line-height:1.5;font-family:'Noto Sans JP',sans-serif;}
+.story .prose{display:flex;flex-direction:column;gap:28px;position:relative;z-index:1;}
+.story .prose p{font-size:14px;line-height:2;color:#635f5b;font-family:'Noto Sans JP',sans-serif;}
+.story .card{background:#faf8f4;border:1px solid #ebe6e0;border-radius:24px;padding:16px;box-shadow:0 8px 8px rgba(49,37,30,.03);position:relative;z-index:1;}
+.story .card .img{aspect-ratio:310/200;height:auto;border-radius:16px;overflow:hidden;}
+.story .card img{width:100%;height:100%;object-fit:cover;}
+.story .b1{left:-185px;top:-140px;width:370px;height:356px;}
+.story .b2{right:-108px;bottom:120px;width:288px;height:262px;}
+.story .b1 img,.story .b2 img{display:block;width:100%;height:100%;}
+.timeline{background:#fbf9f5;padding:80px 24px 80px;}
+.timeline .head{text-align:center;display:flex;flex-direction:column;gap:20px;align-items:center;}
+.timeline .head .headline{font-size:20px;font-weight:500;line-height:1.4;font-family:'Noto Sans JP',sans-serif;}
+.timeline .head .b{font-size:13px;color:#635f5b;line-height:1.8;font-family:'Noto Sans JP',sans-serif;}
+.timeline .nodes{margin-top:40px;}
+.timeline .node{display:flex;gap:16px;}
+.timeline .track{display:flex;flex-direction:column;align-items:center;width:24px;flex-shrink:0;}
+.timeline .dot-outer{width:18px;height:18px;flex-shrink:0;display:block;}
+.timeline .dot-outer svg{display:block;width:100%;height:100%;}
+.timeline{position:relative;}
+.timeline .deco-left{position:absolute;left:-73px;top:37px;width:331px;height:295px;pointer-events:none;z-index:0;}
+.timeline .deco-left img{display:block;width:100%;height:100%;}
+.timeline .deco-right{position:absolute;left:215px;top:394px;width:303px;height:284px;pointer-events:none;z-index:0;}
+.timeline .deco-right img{display:block;width:100%;height:100%;}
+.timeline .head,.timeline .nodes{position:relative;z-index:1;}
+.timeline .trace{flex:1;width:1.5px;background:#e0dcd5;margin-top:4px;}
+.timeline .content{flex:1;padding-bottom:40px;}
+.timeline .meta{font-family:'Noto Sans JP',sans-serif;font-size:14px;color:#7e9075;font-weight:600;}
+.timeline .title{font-size:16px;font-weight:500;line-height:1.4;margin-top:16px;font-family:'Noto Sans JP',sans-serif;}
+.timeline .desc{font-size:13px;color:#635f5b;line-height:1.6;margin-top:8px;font-family:'Noto Sans JP',sans-serif;}
+.timeline .img{margin-top:16px;aspect-ratio:302/180;height:auto;border-radius:16px;overflow:hidden;border:1px solid #ebe6e0;}
+.timeline .img img{width:100%;height:100%;object-fit:cover;}
+.timeline .note{font-size:10px;color:rgba(99,95,91,.7);margin-top:12px;line-height:1.5;font-family:'Noto Sans JP',sans-serif;}
+.story{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(0.4,0,0.2,1),transform .7s cubic-bezier(0.4,0,0.2,1);}
+.story.is-revealed{opacity:1;transform:translateY(0);}
+.timeline .node .content{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(0.4,0,0.2,1),transform .7s cubic-bezier(0.4,0,0.2,1);}
+.timeline .node.is-revealed .content{opacity:1;transform:translateY(0);}
+.timeline .node .dot-outer{opacity:0;transform:scale(0.82);transition:opacity .5s cubic-bezier(0.4,0,0.2,1),transform .5s cubic-bezier(0.4,0,0.2,1);}
+.timeline .node.is-revealed .dot-outer{opacity:1;transform:scale(1);}
+@media (prefers-reduced-motion:reduce){
+.story,.timeline .node .content,.timeline .node .dot-outer{transition:none;opacity:1;transform:none;}
+}
+.faq{background:#fbf9f5;padding:0 24px 80px;}
+.faq .head{text-align:center;display:flex;flex-direction:column;gap:16px;align-items:center;}
+.faq .head .headline{font-size:20px;font-weight:500;line-height:1.5;font-family:'Noto Sans JP',sans-serif;}
+.faq .head .eyebrow .label{font-size:14px;}
+.faq .list{margin-top:48px;border-top:1px solid #ebe6e0;}
+.faq .item{padding:24px 0;border-bottom:1px solid #ebe6e0;display:flex;gap:16px;}
+.faq .num{font-family:'Cormorant Garamond',Georgia,serif;color:#7e9075;font-weight:600;font-size:16px;flex-shrink:0;}
+.faq .q{font-size:16px;font-weight:500;line-height:1.5;font-family:'Noto Sans JP',sans-serif;}
+.faq .a{font-size:14px;color:#635f5b;line-height:1.7;margin-top:8px;font-family:'Noto Sans JP',sans-serif;}
+.faq .q-btn{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;border:0;margin:0;padding:0;background:transparent;font:inherit;text-align:left;cursor:pointer;-webkit-appearance:none;appearance:none;-webkit-tap-highlight-color:transparent;}
+.faq .q-btn:focus-visible{outline:2px solid #7e9075;outline-offset:4px;}
+.faq .plus{position:relative;width:14px;height:14px;flex-shrink:0;transition:transform .4s cubic-bezier(0.4,0,0.2,1);}
+.faq .plus::before,.faq .plus::after{content:"";position:absolute;background:#7e9075;}
+.faq .plus::before{left:0;top:50%;width:100%;height:1.5px;transform:translateY(-50%);}
+.faq .plus::after{top:0;left:50%;width:1.5px;height:100%;transform:translateX(-50%);}
+.faq .item.is-open .plus{transform:rotate(45deg);}
+.faq .a-wrap{height:0;opacity:0;overflow:hidden;transition:height .55s cubic-bezier(0.4,0,0.2,1),opacity .55s cubic-bezier(0.4,0,0.2,1);}
+@media (prefers-reduced-motion:reduce){
+.faq .plus{transition:none;}
+.faq .a-wrap{transition:none;}
+}
+.linecta{background:#fbf9f5;}
+.linecta .hero-img{position:relative;height:380px;padding:24px;display:flex;flex-direction:column;justify-content:space-between;color:#fff;overflow:hidden;}
+.linecta .hero-img img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.linecta .hero-img .scrim{position:absolute;inset:0;background:rgba(30,34,31,.45);z-index:0;}
+.linecta .hero-img>*{position:relative;z-index:1;}
+.linecta .brand-row{display:flex;justify-content:space-between;align-items:center;}
+.linecta .brand-row .logo-img{height:20px;width:auto;}
+.linecta .badge-outline{border:1px solid #fff;border-radius:999px;padding:4px 10px;font-size:10px;font-weight:500;font-family:'Noto Sans JP',sans-serif;}
+.linecta .body{position:relative;overflow:hidden;}
+.linecta .deco-cream{position:absolute;left:-114px;top:216.67px;width:463.25px;height:471.05px;pointer-events:none;z-index:0;}
+.linecta .deco-cream img{display:block;width:100%;height:100%;}
+.linecta .deco-pink{position:absolute;left:290px;top:-80px;width:180px;height:180px;pointer-events:none;z-index:0;}
+.linecta .deco-pink img{display:block;width:100%;height:100%;}
+.linecta .eyebrow,.linecta .headline,.linecta .desc,.linecta .line-btn,.linecta .disclaimer,.linecta .tagline{position:relative;z-index:1;}
+.linecta .line-btn img{display:block;}
+.linecta .tagline .brand-dark{height:44px;width:auto;margin:0 auto;}
+.linecta .caption .kicker{font-family:'Cormorant Garamond',Georgia,serif;font-size:12px;font-weight:500;opacity:.7;}
+.linecta .caption .line{font-size:14px;line-height:1.6;margin-top:8px;font-family:'Noto Sans JP',sans-serif;}
+.linecta .body{padding:56px 24px 64px;text-align:center;position:relative;}
+.linecta .eyebrow .label{font-size:14px;}
+.linecta .headline{font-size:20px;font-weight:500;margin-top:24px;font-family:'Noto Sans JP',sans-serif;}
+.linecta .desc{font-size:14px;color:#635f5b;line-height:1.8;margin-top:24px;font-family:'Noto Sans JP',sans-serif;}
+.linecta .line-btn{display:flex;align-items:center;justify-content:center;gap:12px;background:rgba(37,150,83,.54);color:#fff;border-radius:999px;padding:16px 24px;font-size:14px;font-weight:600;margin-top:40px;box-shadow:0 8px 16px rgba(6,199,85,.15);border:none;width:100%;font-family:'Noto Sans JP',sans-serif;}
+.linecta .disclaimer{font-size:11px;color:#635f5b;opacity:.8;line-height:1.5;margin-top:20px;font-family:'Noto Sans JP',sans-serif;}
+.linecta .tagline{margin-top:40px;text-align:center;}
+.linecta .tagline .brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;}
+.linecta .tagline .sub{font-size:15px;font-weight:500;color:#7e9075;margin-top:4px;font-family:'Noto Sans JP',sans-serif;}
+footer{background:#fbf9f5;border-top:1px solid #ebe6e0;padding:64px 24px 32px;}
+footer .cols{display:flex;justify-content:space-between;font-size:13px;}
+footer .col .head{font-size:13px;font-weight:700;margin-bottom:10px;}
+footer .col p{font-size:13px;color:#635f5b;margin-top:10px;}
+footer .col a{font-size:13px;color:#635f5b;margin-top:10px;display:block;text-decoration:none;}
+footer .bottom{margin-top:48px;padding-top:0;font-size:12px;color:#635f5b;}
+footer .bottom .sns{display:flex;gap:24px;}
+footer .bottom .sns a{color:inherit;text-decoration:none;}
+footer .bottom .copy{margin-top:16px;font-size:10px;opacity:.6;}
+.hiw .step .ph.hiw-stage{-webkit-appearance:none;appearance:none;border:0;margin:0;width:100%;font:inherit;-webkit-tap-highlight-color:transparent;cursor:pointer;}
+.hiw .step .ph.hiw-stage:focus-visible{outline:2px solid #7e9075;outline-offset:3px;}
+.hiw-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 1.56s cubic-bezier(0.4, 0, 0.2, 1);pointer-events:none;}
+.hiw-img.is-active{opacity:1;}
+.hiw-dots{display:flex;justify-content:center;gap:8px;margin-top:2px;}
+.hiw-dots .dot{width:6px;height:6px;border-radius:50%;background:#ddd7cd;transition:background .6s ease;}
+.hiw-dots .dot.is-active{background:#7e9075;}
+.hiw .center-badge .sec-h.hiw-cue{cursor:default;}
+.hiw .center-badge .sec-h.hiw-cue .hc{display:inline-block;}
+.hiw[data-reveal].is-revealed .center-badge .sec-h.hiw-cue .hc{animation:hiwCharWave 1.7s ease-in-out infinite;animation-delay:calc(var(--i) * 60ms);}
+.hiw[data-reveal].is-revealed .center-badge .sec-h.hiw-cue .hc.hc-em{animation-name:hiwCharWaveEm;}
+.hiw[data-reveal].is-revealed .step .ph.hiw-stage{animation:hiwStageBreathe 3.6s ease-in-out infinite;}
+@keyframes hiwCharWave{
+0%,100%{transform:translateY(0);}
+25%{transform:translateY(-2px);}
+75%{transform:translateY(2px);}
+}
+@keyframes hiwCharWaveEm{
+0%,100%{transform:translateY(0);}
+25%{transform:translateY(-3px);}
+75%{transform:translateY(3px);}
+}
+@keyframes hiwStageBreathe{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
+}
+@media (prefers-reduced-motion:reduce){
+.hiw-img{transition:none;}
+.hiw-dots .dot{transition:none;}
+.hiw .center-badge .sec-h.hiw-cue .hc,
+.hiw .step .ph.hiw-stage{animation:none;}
+}
+
+/* unified section scroll-reveal rhythm */
+[data-reveal] .rv{opacity:0;transform:translateY(20px);transition:opacity .85s cubic-bezier(0.4,0,0.2,1),transform .85s cubic-bezier(0.4,0,0.2,1);}
+[data-reveal] .rv.rv-d1{transition-delay:.1s;}
+[data-reveal] .rv.rv-d2{transition-delay:.2s;}
+[data-reveal] .rv-deco{opacity:0;transform:translateY(20px);transition:opacity .95s cubic-bezier(0.4,0,0.2,1),transform .95s cubic-bezier(0.4,0,0.2,1);transition-delay:.22s;}
+[data-reveal].is-revealed .rv{opacity:1;transform:translateY(0);}
+[data-reveal].is-revealed .rv-deco{opacity:1;transform:translateY(0);}
+.hiw .organic.o1.rv-deco{transform:translateY(20px) rotate(-9.19deg) skewX(2.79deg);}
+.hiw .organic.o2.rv-deco{transform:translateY(20px) rotate(46.34deg) skewX(-7.61deg) scaleY(.99);}
+.hiw[data-reveal].is-revealed .organic.o1.rv-deco{transform:translateY(0) rotate(-9.19deg) skewX(2.79deg);}
+.hiw[data-reveal].is-revealed .organic.o2.rv-deco{transform:translateY(0) rotate(46.34deg) skewX(-7.61deg) scaleY(.99);}
+.about .b1.rv-deco{transform:translateY(20px) rotate(21.67deg);}
+.about[data-reveal].is-revealed .b1.rv-deco{transform:translateY(0) rotate(21.67deg);}
+.emo .blob-big.rv-deco,.emo .blob-dot.rv-deco,.emo .dot2.rv-deco,.emo .corner.rv-deco{transform:translateY(20px) rotate(-48.13deg);}
+.emo[data-reveal].is-revealed .blob-big.rv-deco,
+.emo[data-reveal].is-revealed .blob-dot.rv-deco,
+.emo[data-reveal].is-revealed .dot2.rv-deco,
+.emo[data-reveal].is-revealed .corner.rv-deco{transform:translateY(0) rotate(-48.13deg);}
+.dl[data-reveal].is-revealed .b1.rv-deco,.dl[data-reveal].is-revealed .b2.rv-deco{opacity:.35;}
+.pers[data-reveal].is-revealed .b1.rv-deco{opacity:.4;}
+.cs[data-reveal].is-revealed .b1.rv-deco{opacity:.35;}
+.cta[data-reveal].is-revealed .b1.rv-deco{opacity:.4;}
+.pf[data-reveal].is-revealed .b1.rv-deco{opacity:.35;}
+.cta[data-reveal].is-revealed .b.rv{opacity:.6;}
+.linecta[data-reveal].is-revealed .disclaimer.rv{opacity:.8;}
+@media (prefers-reduced-motion:reduce){
+[data-reveal] .rv,[data-reveal] .rv-deco{transition:none;opacity:1;transform:translateY(0);}
+.hiw .organic.o1.rv-deco{transform:translateY(0) rotate(-9.19deg) skewX(2.79deg);}
+.hiw .organic.o2.rv-deco{transform:translateY(0) rotate(46.34deg) skewX(-7.61deg) scaleY(.99);}
+.about .b1.rv-deco{transform:translateY(0) rotate(21.67deg);}
+.emo .blob-big.rv-deco,.emo .blob-dot.rv-deco,.emo .dot2.rv-deco,.emo .corner.rv-deco{transform:translateY(0) rotate(-48.13deg);}
+.dl .b1.rv-deco,.dl .b2.rv-deco{opacity:.35;}
+.pers .b1.rv-deco{opacity:.4;}
+.cs .b1.rv-deco{opacity:.35;}
+.cta .b1.rv-deco{opacity:.4;}
+.pf .b1.rv-deco{opacity:.35;}
+.cta .b.rv{opacity:.6;}
+.linecta .disclaimer.rv{opacity:.8;}
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <video autoplay muted loop playsinline poster="hero-poster.jpg" src="hero.mp4"></video>
+  <div class="hero-overlay"></div>
+  <nav>
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNavOverlay" aria-label="メニューを開く">
+      <svg class="menu-icon" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line class="l1" x1="1" y1="1" x2="16.9984" y2="1" stroke="#EFECE8" stroke-width="2" stroke-linecap="round"/><line class="l2" x1="1" y1="8.0008" x2="16.9984" y2="8.0008" stroke="#EFECE8" stroke-width="2" stroke-linecap="round"/><line class="l3" x1="1" y1="15.0016" x2="16.9984" y2="15.0016" stroke="#EFECE8" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <img class="logo" src="assets/icons/logo-white.png" alt="YADORI">
+  </nav>
+  <div class="core">
+    <p class="headline">触れると、くるん。</p>
+    <p class="sub">両手にそっとおさまる、<br>小さなハリネズミ。</p>
+  </div>
+  <div class="bottom">
+    <a class="btn" href="https://lin.ee/9VBtXgp" target="_blank" rel="noopener noreferrer">LINEで限定情報を受け取る</a>
+    <p class="disclaimer">※LINEでは、お得なクーポンや数量限定リターン<br>を事前にお知らせします。</p>
+  </div>
+</section>
+
+<a class="float-cta" id="floatCta" href="https://lin.ee/9VBtXgp" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1"><svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.1798 13.8452C17.4924 13.5327 17.668 13.1088 17.668 12.6667V2.66667C17.668 2.22465 17.4924 1.80072 17.1798 1.48816C16.8672 1.1756 16.4433 1 16.0012 1H2.6668C2.22474 1 1.80078 1.1756 1.48819 1.48816C1.17561 1.80072 1 2.22465 1 2.66667V16.2384C1.00002 16.3554 1.03473 16.4698 1.09975 16.5671C1.16477 16.6644 1.25717 16.7402 1.36529 16.785C1.4734 16.8297 1.59236 16.8415 1.70713 16.8186C1.8219 16.7958 1.92733 16.7395 2.01008 16.6567L3.84523 14.8217C4.15774 14.5091 4.58163 14.3335 5.02365 14.3334H16.0012C16.4433 14.3334 16.8672 14.1578 17.1798 13.8452Z" stroke="#EFECE8" stroke-width="2" stroke-linecap="round"/></svg>LINEで限定情報を受け取る</a>
+
+<div class="nav-overlay" id="siteNavOverlay" aria-hidden="true">
+  <nav class="nav-panel" aria-label="サイトナビゲーション">
+    <a href="#how-it-works">How it Works</a>
+    <a href="#concept">Concept</a>
+    <a href="#product">yadori.</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<section class="hiw" id="how-it-works" data-reveal>
+  <span class="organic o1 rv-deco"><img src="assets/svg/how-it-works-blob-01.png" alt="" width="702" height="580" loading="lazy"></span>
+  <span class="organic o2 rv-deco"><img src="assets/svg/how-it-works-blob-02.png" alt="" width="608" height="570" loading="lazy"></span>
+  <div class="center-badge rv">
+    <p class="sec-h hiw-cue"><span class="hc" style="--i:0">ち</span><span class="hc" style="--i:1">ょ</span><span class="hc" style="--i:2">っ</span><span class="hc" style="--i:3">と</span><span class="hc" style="--i:4">、</span><span class="hc hc-em" style="--i:5">触</span><span class="hc hc-em" style="--i:6">っ</span><span class="hc hc-em" style="--i:7">て</span><span class="hc hc-em" style="--i:8">み</span><span class="hc hc-em" style="--i:9">る</span><span class="hc hc-em" style="--i:10">？</span></p>
+  </div>
+  <div class="steps rv rv-d1">
+    <div class="step">
+      <button type="button" class="ph hiw-stage" id="hiwStage" aria-label="商品画像を切り替える（1/3枚目を表示中）">
+        <img class="hiw-img is-active" src="assets/images/step-01-photo.png" alt="">
+        <img class="hiw-img" src="assets/images/step-02-photo.png" alt="">
+        <img class="hiw-img" src="assets/images/step-03-photo.png" alt="">
+      </button>
+      <div class="hiw-dots" id="hiwDots" aria-hidden="true">
+        <span class="dot is-active"></span><span class="dot"></span><span class="dot"></span>
+      </div>
+      <p class="t">そっと触れると、<br>体を丸めたり、顔を隠したり。</p>
+      <p class="b">触れ方に合わせて、<br>小さな反応を返してくれます。</p>
+    </div>
+  </div>
+</section>
+
+<section class="pc" id="concept" data-reveal>
+  <div class="media rv"><div class="img"><img src="assets/images/concept-photo.png" alt=""></div></div>
+  <div class="content rv rv-d1">
+    <p class="h">言えない日も、ある</p>
+    <p class="b">うれしい日も、少し疲れた日も、
+なんでもない日も。
+言葉を交わさなくても、
+触れるたびに生まれる、小さなやりとり。
+
+はりりんは、
+そんな時間のそばにいます。</p>
+    <div class="tag"><svg class="line" style="width:32px;height:auto;display:block;" width="32" height="1" viewBox="0 0 32 1" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="0.5" x2="32" y2="0.5" stroke="#7E9075"/></svg><span class="serif">A Quiet Presence</span></div>
+  </div>
+</section>
+
+<section class="emo" data-reveal>
+  <span class="blob-big rv-deco"><img src="assets/svg/emo-blob-main.png" alt="" width="1110" height="820" loading="lazy"></span>
+  <span class="blob-dot rv-deco"><img src="assets/svg/emo-blob-small.png" alt="" width="218" height="203" loading="lazy"></span>
+  <span class="dot2 rv-deco"><img src="assets/svg/emo-blob-circle.png" alt="" width="171" height="171" loading="lazy"></span>
+  <span class="corner rv-deco"><img src="assets/svg/emo-accent-dot.png" alt="" width="64" height="124" loading="lazy"></span>
+  <p class="h rv">言葉は話さない。<br>でも、触れると返してくれる。</p>
+  <p class="b rv rv-d1">たくさん話しかけたり、
+何かを教えたりはしません。
+
+ただ、そっと触れると、
+小さな体で応えてくれる。
+
+言葉がいらないからこそ、
+ちょうどいい時間があります。</p>
+</section>
+
+<section class="dl" data-reveal>
+  <div class="blob b1 rv-deco"></div>
+  <div class="blob b2 rv-deco"></div>
+  <div class="center-badge rv">
+    <p class="sec-h">いつもの時間の、そばに。</p>
+  </div>
+  <div class="moments rv rv-d1">
+    <div class="moment"><div class="ph"><video autoplay muted loop playsinline poster="assets/images/daily-life-home-poster.jpg" src="assets/images/daily-life-home.mp4"></video></div><p class="t">少し疲れた日の、帰宅後に。</p><p class="b">言葉にしなくても、そばにいてくれる。</p></div>
+    <div class="moment"><div class="ph"><video autoplay muted loop playsinline poster="assets/images/daily-life-working-poster.jpg" src="assets/images/daily-life-working.mp4"></video></div><p class="t">作業の合間に。</p><p class="b">そっと触れて、ひと息つく。</p></div>
+    <div class="moment"><div class="ph"><video autoplay muted loop playsinline poster="assets/images/daily-life-sleep-poster.jpg" src="assets/images/daily-life-sleep.mp4"></video></div><p class="t">眠る前の、静かな時間に。</p><p class="b">今日の終わりに、そっとふれる。</p></div>
+  </div>
+</section>
+
+<section class="pers" data-reveal>
+  <div class="blob b1 rv-deco"></div>
+  <div class="ph rv"><img src="assets/images/personality-photo.png" alt=""></div>
+  <div class="content rv rv-d1">
+    <p class="h">はりりんは、<br>ちょっぴり臆病。</p>
+    <p class="b">まわりの気配に敏感で、
+そっと触れると、くるん。
+
+丸まったあとは、
+しばらくすると、またいつもの姿に。
+
+そんな不器用なところも、
+この子らしさです。</p>
+  </div>
+</section>
+
+<section class="cs" id="colors" data-reveal>
+  <div class="blob b1 rv-deco"></div>
+  <div class="center-badge rv">
+    <p class="sec-h"><span style="font-size:24px;display:block;">COLOR VARIATIONS</span><span style="font-size:20px;">それぞれの色、それぞれのかわいさ。</span></p>
+  </div>
+  <div class="cards rv rv-d1">
+    <div class="card"><div class="ph"><img src="assets/images/color-variants-photo.png" alt=""></div></div>
+  </div>
+  <p class="note rv rv-d2">はりりんのカラーは、現在準備中。<br>LINEでは、発売予定カラーの先行公開や<br>カラーアンケートもお届けします。</p>
+</section>
+
+<section class="pf" id="product" data-reveal>
+  <div class="blob b1 rv-deco"></div>
+  <div class="title rv">
+    <p class="eng">PRODUCT FEATURES</p>
+    <p class="sub">小さなからだに、やさしい仕掛け。</p>
+  </div>
+  <div class="block rv rv-d1">
+    <h4>SIZE</h4>
+    <div class="size-img"><img src="assets/images/features-size-photo.jpg" alt=""></div>
+    <p class="size-cap">両手で、そっと包める大きさ。</p>
+  </div>
+  <div class="block rv rv-d2">
+    <h4>SPEC</h4>
+    <div class="spec">
+      <div class="row"><span class="k">サイズ</span><span class="v">約幅10cm × 高さ15cm × 奥行10cm</span></div>
+      <div class="row"><span class="k">充電時間</span><span class="v">約2.5〜3時間</span></div>
+      <div class="row"><span class="k">使用時間</span><span class="v">約8時間</span></div>
+      <div class="row"><span class="k">主な材質</span><span class="v">ポリエステル、ABS樹脂ほか</span></div>
+    </div>
+    <p class="spec-note">※開発中のため、仕様・デザインは変更となる場合があります。<br>※使用時間は、使用環境や動作回数によって異なります。</p>
+  </div>
+  <div class="gallery rv rv-d2">
+    <div class="g"><img src="assets/images/gallery-01.jpg" alt=""></div>
+    <div class="g"><img src="assets/images/gallery-02.jpg" alt=""></div>
+    <div class="g"><img src="assets/images/gallery-03.jpg" alt=""></div>
+  </div>
+</section>
+
+<section class="cta" data-reveal>
+  <div class="blob b1 rv-deco"></div>
+  <p class="h rv">触れたくなったとき、<br>そっと、となりに。</p>
+  <p class="b rv rv-d1">忙しない毎日に、小さな余白と温もりを。</p>
+</section>
+
+<section class="about" data-reveal>
+  <div class="blob b1 rv-deco"><img src="assets/svg/about-blob-pink.png" alt="" width="451" height="554" loading="lazy"></div>
+  <div class="blob b2 rv-deco"><img src="assets/svg/about-blob-cream.png" alt="" width="668" height="608" loading="lazy"></div>
+  <div class="about-header rv">
+    <div class="eyebrow">
+      <span class="label">ABOUT <span style="font-size:16px;text-transform:none;">「yadori.」</span></span>
+      <svg class="line" style="width:20px" width="20" height="2" viewBox="0 0 20 2" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="0.75" x2="20" y2="0.75" stroke="#7E9075" stroke-width="1.5"/></svg>
+    </div>
+    <p class="headline">そばにいる、ということ。</p>
+  </div>
+  <p class="prose rv rv-d1">うれしい日も、疲れた日も、
+なんでもない日も。
+いつもの場所に、いつものように。
+ふと気づけば、そばにいる。
+そっと触れると、
+小さな動きで応えてくれる。
+「yadori.」は、気持ちのとなりにいる
+小さな存在を届けます。</p>
+  <div class="frame rv rv-d2"><img src="assets/images/about-photo.jpg" alt=""></div>
+</section>
+
+<section class="story">
+  <div class="blob b1"><img src="assets/svg/story-blob-pink.png" alt="" width="370" height="432" loading="lazy"></div>
+  <div class="blob b2"><img src="assets/svg/story-blob-cream.png" alt="" width="576" height="524" loading="lazy"></div>
+  <div class="story-header">
+    <div class="eyebrow">
+      <span class="label">Our Story</span>
+      <svg class="line" style="width:24px" width="24" height="2" viewBox="0 0 24 2" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="0.75" x2="24" y2="0.75" stroke="#7E9075" stroke-width="1.5"/></svg>
+    </div>
+    <p class="headline">この子が生まれたきっかけ</p>
+  </div>
+  <div class="prose">
+    <p>娘が、触れるとくるんと丸くなるダンゴムシを見つめていた、ある日の午後。</p>
+    <p>その姿から、「触れると、恥ずかしそうに丸くなるハリネズミ」という小さなアイデアが生まれました。</p>
+    <p>何度も絵を描き、表情や動きを考えながら、少しずつ、この子のかたちになっていきました。</p>
+  </div>
+  <div class="card">
+    <div class="img"><img src="assets/images/story-sketch-photo.jpg" alt=""></div>
+  </div>
+</section>
+
+<section class="timeline">
+  <span class="deco-left"><img src="assets/svg/timeline-blob-left.png" alt="" width="662" height="590" loading="lazy"></span>
+  <span class="deco-right"><img src="assets/svg/timeline-blob-right.png" alt="" width="606" height="568" loading="lazy"></span>
+  <div class="head">
+    <div class="eyebrow">
+      <span class="label">Development</span>
+      <svg class="line" style="width:24px" width="24" height="2" viewBox="0 0 24 2" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="0.75" x2="24" y2="0.75" stroke="#7E9075" stroke-width="1.5"/></svg>
+    </div>
+    <p class="headline">アイデアから、<br>かたちになるまで。</p>
+    <p class="b">小さなアイデアから始まった、はりりん。触れたときの反応や、抱きしめたときのやわらかさまで。試作と改良を重ねながら、少しずつかたちにしてきました。</p>
+  </div>
+  <div class="nodes">
+    <div class="node">
+      <div class="track"><span class="dot-outer" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="8" fill="#fff" stroke="#7e9075" stroke-width="1.5"/><circle cx="9" cy="9" r="4" fill="#7e9075"/></svg></span><div class="trace"></div></div>
+      <div class="content">
+        <p class="meta serif">2026.02 — IDEA</p>
+        <p class="title">小さな発見から</p>
+        <p class="desc">娘と見つけたダンゴムシから、最初のアイデアが生まれました。</p>
+        <div class="img"><img src="assets/images/timeline-01-photo.jpg" alt=""></div>
+      </div>
+    </div>
+    <div class="node">
+      <div class="track"><span class="dot-outer" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="8" fill="#fff" stroke="#7e9075" stroke-width="1.5"/><circle cx="9" cy="9" r="4" fill="#7e9075"/></svg></span><div class="trace"></div></div>
+      <div class="content">
+        <p class="meta serif">03-05 — DESIGN</p>
+        <p class="title">動きと抱き心地を考える</p>
+        <p class="desc">表情、フォルム、内部構造まで、何度も検討を重ねました。</p>
+        <div class="img"><img src="assets/images/timeline-03-photo.jpg" alt=""></div>
+      </div>
+    </div>
+    <div class="node">
+      <div class="track"><span class="dot-outer" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="9" r="8" fill="#fff" stroke="#7e9075" stroke-width="1.5"/><circle cx="9" cy="9" r="4" fill="#7e9075"/></svg></span></div>
+      <div class="content">
+        <p class="meta serif">06-08 — PROTOTYPE &amp; TESTING</p>
+        <p class="title">試作を重ねて、あなたのそばへ</p>
+        <p class="desc">内部構造から、生地や色合いまで。試作とテストを繰り返し、少しずつ今の姿に近づいてきました。</p>
+        <div class="img"><img src="assets/images/timeline-04-photo.jpg" alt=""></div>
+        <p class="note">※開発過程で制作した試作品です。販売予定のカラーとは異なる場合があります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq" data-reveal>
+  <div class="head rv">
+    <div class="eyebrow">
+      <span class="label">FAQ</span>
+      <svg class="line" style="width:24px" width="24" height="2" viewBox="0 0 24 2" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="0.75" x2="24" y2="0.75" stroke="#7E9075" stroke-width="1.5"/></svg>
+    </div>
+    <p class="headline">よくあるご質問</p>
+  </div>
+  <div class="list rv rv-d1">
+    <div class="item"><span class="num serif">01</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1"><span class="q">どのように動きますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-1" role="region" aria-labelledby="faq-q-1"><p class="a">やさしく触れると、体を半分丸めたり、くるんと丸くなったり、顔を隠したり。触れ方に合わせて、かわいらしい仕草で応えてくれます。</p></div></div></div>
+    <div class="item"><span class="num serif">02</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2"><span class="q">どこに触れると反応しますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-2" role="region" aria-labelledby="faq-q-2"><p class="a">おなかをやさしくなでたり、そっと触れたりすると反応します。触れ方によって変わる仕草をお楽しみください。</p></div></div></div>
+    <div class="item"><span class="num serif">03</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3"><span class="q">音声や会話機能はありますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-3" role="region" aria-labelledby="faq-q-3"><p class="a">会話機能はありません。触れると、かわいらしい声と仕草で応えてくれます。</p></div></div></div>
+    <div class="item"><span class="num serif">04</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4"><span class="q">子どもでも使えますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-4" role="region" aria-labelledby="faq-q-4"><p class="a">お子さまにもお楽しみいただけます。小さなお子さまが使用する際は、安全のため保護者の方と一緒にお楽しみください。</p></div></div></div>
+    <div class="item"><span class="num serif">05</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5"><span class="q">どのように充電しますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-5" role="region" aria-labelledby="faq-q-5"><p class="a">付属のUSB Type-Cケーブルで充電できます。充電時間は約2.5〜3時間です。<br>※充電用アダプターの付属有無は、商品仕様をご確認ください。</p></div></div></div>
+    <div class="item"><span class="num serif">06</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-6" aria-expanded="false" aria-controls="faq-a-6"><span class="q">汚れた場合は洗えますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-6" role="region" aria-labelledby="faq-q-6"><p class="a">内部に機械部品が入っているため、丸洗いはできません。汚れた部分を、固く絞ったやわらかい布でやさしく拭いてください。</p></div></div></div>
+    <div class="item"><span class="num serif">07</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-7" aria-expanded="false" aria-controls="faq-a-7"><span class="q">いつ、どこで購入できますか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-7" role="region" aria-labelledby="faq-q-7"><p class="a">現在、先行販売に向けて準備中です。発売時期や販売ページについては、LINEでいち早くお知らせします。</p></div></div></div>
+    <div class="item"><span class="num serif">08</span><div class="faq-body"><button type="button" class="q-btn" id="faq-q-8" aria-expanded="false" aria-controls="faq-a-8"><span class="q">故障した場合はどうすればよいですか？</span><span class="plus" aria-hidden="true"></span></button><div class="a-wrap" id="faq-a-8" role="region" aria-labelledby="faq-q-8"><p class="a">商品到着日から１年間の保証が付いています。保証期間内に不具合が生じた場合は、yadori.のお問い合わせ窓口までご連絡ください。</p></div></div></div>
+  </div>
+</section>
+
+<section class="linecta" id="contact" style="padding:0;" data-reveal>
+  <div class="hero-img rv">
+    <img class="bg" src="assets/images/line-cta-bg.jpg" alt="">
+    <div class="scrim"></div>
+    <div class="brand-row">
+      <img class="logo-img" src="assets/icons/logo-white.png" alt="YADORI">
+      <span class="badge-outline">Coming Soon</span>
+    </div>
+    <div class="caption">
+      <p class="kicker serif">A QUIET PRESENCE</p>
+      <p class="line">もうすぐ、あなたのそばへ。</p>
+    </div>
+  </div>
+  <div class="body">
+    <span class="deco-cream rv-deco"><img src="assets/svg/line-cta-blob-cream.png" alt="" width="708" height="626" loading="lazy"></span>
+    <span class="deco-pink rv-deco"><img src="assets/svg/line-cta-blob-pink.png" alt="" width="360" height="360" loading="lazy"></span>
+    <div class="eyebrow rv rv-d1">
+      <span class="label">Line Registration</span>
+      <svg class="line" style="width:28px" width="28" height="2" viewBox="0 0 28 2" fill="none" xmlns="http://www.w3.org/2000/svg"><line y1="0.75" x2="28" y2="0.75" stroke="#7E9075" stroke-width="1.5"/></svg>
+    </div>
+    <p class="headline rv rv-d1">この子を、少しでも<br>気になってくださった方へ。</p>
+    <p class="desc rv rv-d1">発売日や先行販売、カラーについてのお知らせを、<br>LINEでいち早くお届けします。</p>
+    <a class="line-btn rv rv-d2" href="https://lin.ee/9VBtXgp" target="_blank" rel="noopener noreferrer"><svg style="width:20px;height:20px;" width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.1798 13.8452C17.4924 13.5327 17.668 13.1088 17.668 12.6667V2.66667C17.668 2.22465 17.4924 1.80072 17.1798 1.48816C16.8672 1.1756 16.4433 1 16.0012 1H2.6668C2.22474 1 1.80078 1.1756 1.48819 1.48816C1.17561 1.80072 1 2.22465 1 2.66667V16.2384C1.00002 16.3554 1.03473 16.4698 1.09975 16.5671C1.16477 16.6644 1.25717 16.7402 1.36529 16.785C1.4734 16.8297 1.59236 16.8415 1.70713 16.8186C1.8219 16.7958 1.92733 16.7395 2.01008 16.6567L3.84523 14.8217C4.15774 14.5091 4.58163 14.3335 5.02365 14.3334H16.0012C16.4433 14.3334 16.8672 14.1578 17.1798 13.8452Z" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>LINEで限定情報を受け取る</a>
+    <p class="disclaimer rv rv-d2">※LINEでは、お得なクーポンや数量限定リターン<br>を事前にお知らせします。</p>
+    <div class="tagline rv rv-d2">
+      <img class="brand-dark" src="assets/icons/logo-dark.png" alt="YADORI">
+      <p class="sub">気持ちがやどる。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="cols">
+    <div class="col"><p class="head">ABOUT</p><a href="#concept">Concept</a><a href="#how-it-works">How it Works</a></div>
+    <div class="col"><p class="head">PRODUCT</p><a href="#product">yadori.</a></div>
+    <div class="col"><p class="head">SUPPORT</p><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+  </div>
+  <div class="bottom">
+    <div class="sns"><a href="https://www.instagram.com/xiaopa_jp/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://note.com/yadori_jp" target="_blank" rel="noopener noreferrer">Notes</a></div>
+    <p class="copy">@2026 Polaris One Co., Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var stage = document.getElementById('hiwStage');
+  if(!stage) return;
+  var imgs = stage.querySelectorAll('.hiw-img');
+  var dots = document.getElementById('hiwDots').querySelectorAll('.dot');
+  var total = imgs.length;
+  var current = 0;
+
+  function render(){
+    for(var i=0;i<total;i++){
+      imgs[i].classList.toggle('is-active', i===current);
+      dots[i].classList.toggle('is-active', i===current);
+    }
+    stage.setAttribute('aria-label','商品画像を切り替える（'+(current+1)+'/'+total+'枚目を表示中）');
+  }
+
+  function next(){
+    current = (current+1)%total;
+    render();
+  }
+
+  stage.addEventListener('click', next);
+  stage.addEventListener('keydown', function(e){
+    if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){
+      e.preventDefault();
+      next();
+    }
+  });
+})();
+
+(function(){
+  var items = document.querySelectorAll('.faq .item');
+  if(!items.length) return;
+
+  function openItem(item){
+    var btn = item.querySelector('.q-btn');
+    var wrap = item.querySelector('.a-wrap');
+    item.classList.add('is-open');
+    btn.setAttribute('aria-expanded','true');
+    wrap.style.height = wrap.scrollHeight + 'px';
+    wrap.style.opacity = '1';
+    wrap.addEventListener('transitionend', function onEnd(e){
+      if(e.propertyName === 'height' && item.classList.contains('is-open')){
+        wrap.style.height = 'auto';
+      }
+      wrap.removeEventListener('transitionend', onEnd);
+    });
+  }
+
+  function closeItem(item){
+    var btn = item.querySelector('.q-btn');
+    var wrap = item.querySelector('.a-wrap');
+    if(wrap.style.height === 'auto' || wrap.style.height === ''){
+      wrap.style.height = wrap.scrollHeight + 'px';
+      wrap.offsetHeight; // force reflow so the browser animates from this height
+    }
+    requestAnimationFrame(function(){
+      item.classList.remove('is-open');
+      btn.setAttribute('aria-expanded','false');
+      wrap.style.height = '0px';
+      wrap.style.opacity = '0';
+    });
+  }
+
+  items.forEach(function(item){
+    var btn = item.querySelector('.q-btn');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('is-open');
+      items.forEach(function(other){
+        if(other !== item && other.classList.contains('is-open')) closeItem(other);
+      });
+      if(isOpen) closeItem(item); else openItem(item);
+    });
+  });
+})();
+
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var overlay = document.getElementById('siteNavOverlay');
+  if(!btn || !overlay) return;
+  var links = overlay.querySelectorAll('a');
+  var lastFocus = null;
+
+  function onKeydown(e){
+    if(e.key === 'Escape' || e.key === 'Esc'){
+      closeMenu();
+      return;
+    }
+    if(e.key === 'Tab' && links.length){
+      var first = links[0], last = links[links.length-1];
+      if(e.shiftKey && document.activeElement === first){
+        e.preventDefault(); last.focus();
+      } else if(!e.shiftKey && document.activeElement === last){
+        e.preventDefault(); first.focus();
+      }
+    }
+  }
+
+  function openMenu(){
+    lastFocus = document.activeElement;
+    btn.classList.add('is-open');
+    btn.setAttribute('aria-expanded','true');
+    overlay.classList.add('is-open');
+    overlay.setAttribute('aria-hidden','false');
+    document.documentElement.classList.add('nav-open');
+    document.addEventListener('keydown', onKeydown);
+    if(links.length) links[0].focus();
+  }
+
+  function closeMenu(){
+    btn.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    overlay.classList.remove('is-open');
+    overlay.setAttribute('aria-hidden','true');
+    document.documentElement.classList.remove('nav-open');
+    document.removeEventListener('keydown', onKeydown);
+    if(lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  }
+
+  btn.addEventListener('click', function(){
+    if(overlay.classList.contains('is-open')) closeMenu(); else openMenu();
+  });
+
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay) closeMenu();
+  });
+
+  links.forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+})();
+
+(function(){
+  var targets = document.querySelectorAll('.story, .timeline .node, [data-reveal]');
+  if(!targets.length) return;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(reduceMotion || !('IntersectionObserver' in window)){
+    targets.forEach(function(el){ el.classList.add('is-revealed'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-revealed');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.2, rootMargin:'0px 0px -10% 0px'});
+
+  targets.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var floatBtn = document.getElementById('floatCta');
+  var heroBtn = document.querySelector('.hero .btn');
+  var finalBtn = document.querySelector('.linecta .line-btn');
+  if(!floatBtn || !heroBtn || !finalBtn || !('IntersectionObserver' in window)) return;
+
+  var heroGone = false;
+  var finalHere = false;
+
+  function update(){
+    var show = heroGone && !finalHere;
+    floatBtn.classList.toggle('is-visible', show);
+    floatBtn.setAttribute('aria-hidden', show ? 'false' : 'true');
+    floatBtn.tabIndex = show ? 0 : -1;
+  }
+
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      heroGone = !entry.isIntersecting;
+      update();
+    });
+  }, {threshold:0}).observe(heroBtn);
+
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      finalHere = entry.isIntersecting;
+      update();
+    });
+  }, {threshold:0}).observe(finalBtn);
+})();
+
+(function(){
+  var vids = document.querySelectorAll('.dl .moment video');
+  if(!vids.length || !('IntersectionObserver' in window)) return;
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var v = entry.target;
+      if(entry.isIntersecting){
+        var p = v.play();
+        if(p && p.catch) p.catch(function(){});
+      } else {
+        v.pause();
+      }
+    });
+  }, {threshold:0, rootMargin:'-45% 0px -45% 0px'});
+
+  vids.forEach(function(v){ io.observe(v); });
+})();
+</script>
+</body>
+</html>
