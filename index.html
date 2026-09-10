@@ -73,6 +73,8 @@ html.nav-open{overflow:hidden;}
 .hero .bottom{display:flex;flex-direction:column;align-items:center;gap:16px;}
 .hero .btn{background:rgba(36,242,120,.21);color:#efece8;width:100%;text-align:center;}
 .hero .disclaimer{font-size:11px;opacity:.85;line-height:1.4;text-align:center;font-family:'Noto Sans JP',sans-serif;}
+.hero .disclaimer .tag{display:inline-block;font-weight:700;transform-origin:center;animation:tagBreathe 2.2s ease-in-out infinite;}
+@keyframes tagBreathe{0%,100%{transform:scale(1);}50%{transform:scale(1.3);}}
 .float-cta{display:flex;align-items:center;justify-content:center;gap:10px;position:fixed;left:50%;bottom:16px;transform:translateX(-50%) translateY(12px);width:calc(100% - 48px);max-width:382px;z-index:45;background:rgba(37,150,83,.54);color:#fff;border:none;border-radius:999px;padding:14px 24px;font-size:13px;font-weight:600;font-family:'Noto Sans JP',sans-serif;box-shadow:0 8px 16px rgba(6,199,85,.15);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .3s cubic-bezier(0.4,0,0.2,1),transform .3s cubic-bezier(0.4,0,0.2,1),visibility 0s linear .3s;}
 .float-cta svg{flex:none;}
 .float-cta.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);transition:opacity .3s cubic-bezier(0.4,0,0.2,1),transform .3s cubic-bezier(0.4,0,0.2,1),visibility 0s linear 0s;}
@@ -391,7 +393,7 @@ src="https://www.facebook.com/tr?id=1085422747362577&ev=PageView&noscript=1"
     <p class="sub">両手にそっとおさまる、<br>小さなハリネズミ。</p>
   </div>
   <div class="bottom">
-    <p class="disclaimer">＼ LINE登録者限定 ／<br>お得なクーポン・先行販売情報をいち早く</p>
+    <p class="disclaimer"><span class="tag">＼ LINE登録者限定 ／</span><br>お得なクーポン・先行販売情報をいち早く</p>
     <a class="btn" href="https://lin.ee/9VBtXgp" target="_blank" rel="noopener noreferrer">LINEで限定情報を受け取る</a>
   </div>
 </section>
